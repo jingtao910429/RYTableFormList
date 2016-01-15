@@ -10,7 +10,8 @@
 #import <objc/runtime.h>
 
 //用static修饰后，不能提供外界访问
-static const NSString *className = @"nameLabel";
+static const NSString *className = @"NameLabel";
+const NSString *baseNameLabel = @"NameLabel";
 
 @interface RYTableViewCell ()
 
@@ -62,7 +63,7 @@ static const NSString *className = @"nameLabel";
     
     NSDictionary *attributesDict = itemDict;
     
-    const char * className = [@"nameLabel" cStringUsingEncoding:NSASCIIStringEncoding];
+    const char * className = [baseNameLabel cStringUsingEncoding:NSASCIIStringEncoding];
     
     Class nameLabelClass = objc_getClass(className);
     
