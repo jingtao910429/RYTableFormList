@@ -14,6 +14,17 @@
 		983767791C48CF85004B7EB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983767781C48CF85004B7EB7 /* Images.xcassets */; };
 		9837677C1C48CF85004B7EB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9837677A1C48CF85004B7EB7 /* LaunchScreen.xib */; };
 		983767881C48CF85004B7EB7 /* RYTableFormListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767871C48CF85004B7EB7 /* RYTableFormListTests.m */; };
+		98BB83331C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83321C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m */; };
+		98BB83361C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83351C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m */; };
+		98BB83391C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83381C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.m */; };
+		98BB833C1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB833B1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.m */; };
+		98BB833F1C48E4240081EF4B /* TraditionTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB833E1C48E4240081EF4B /* TraditionTextViewTableViewCell.m */; };
+		98BB83421C48E43C0081EF4B /* TraditionTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83411C48E43C0081EF4B /* TraditionTextTableViewCell.m */; };
+		98BB83451C48E53D0081EF4B /* TraditionSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83441C48E53D0081EF4B /* TraditionSwitcherTableViewCell.m */; };
+		98BB83481C48E5500081EF4B /* TraditionSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83471C48E5500081EF4B /* TraditionSliderTableViewCell.m */; };
+		98BB834B1C48E5670081EF4B /* TraditionCustomerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB834A1C48E5670081EF4B /* TraditionCustomerTableViewCell.m */; };
+		98BB834E1C48E57B0081EF4B /* TraditionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB834D1C48E57B0081EF4B /* TraditionImageTableViewCell.m */; };
+		98BB83511C48E7390081EF4B /* RYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83501C48E7390081EF4B /* RYTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +51,29 @@
 		983767811C48CF85004B7EB7 /* RYTableFormListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RYTableFormListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		983767861C48CF85004B7EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983767871C48CF85004B7EB7 /* RYTableFormListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYTableFormListTests.m; sourceTree = "<group>"; };
+		98BB83301C48DFC30081EF4B /* FormListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormListHeader.h; sourceTree = "<group>"; };
+		98BB83311C48E38B0081EF4B /* TraditionDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionDatePickerTableViewCell.h; sourceTree = "<group>"; };
+		98BB83321C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionDatePickerTableViewCell.m; sourceTree = "<group>"; };
+		98BB83341C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionAddressPickerTableViewCell.h; sourceTree = "<group>"; };
+		98BB83351C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionAddressPickerTableViewCell.m; sourceTree = "<group>"; };
+		98BB83371C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionValuesPickerTableViewCell.h; sourceTree = "<group>"; };
+		98BB83381C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionValuesPickerTableViewCell.m; sourceTree = "<group>"; };
+		98BB833A1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		98BB833B1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		98BB833D1C48E4240081EF4B /* TraditionTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextViewTableViewCell.h; sourceTree = "<group>"; };
+		98BB833E1C48E4240081EF4B /* TraditionTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextViewTableViewCell.m; sourceTree = "<group>"; };
+		98BB83401C48E43C0081EF4B /* TraditionTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextTableViewCell.h; sourceTree = "<group>"; };
+		98BB83411C48E43C0081EF4B /* TraditionTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextTableViewCell.m; sourceTree = "<group>"; };
+		98BB83431C48E53D0081EF4B /* TraditionSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSwitcherTableViewCell.h; sourceTree = "<group>"; };
+		98BB83441C48E53D0081EF4B /* TraditionSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSwitcherTableViewCell.m; sourceTree = "<group>"; };
+		98BB83461C48E5500081EF4B /* TraditionSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSliderTableViewCell.h; sourceTree = "<group>"; };
+		98BB83471C48E5500081EF4B /* TraditionSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSliderTableViewCell.m; sourceTree = "<group>"; };
+		98BB83491C48E5670081EF4B /* TraditionCustomerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionCustomerTableViewCell.h; sourceTree = "<group>"; };
+		98BB834A1C48E5670081EF4B /* TraditionCustomerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionCustomerTableViewCell.m; sourceTree = "<group>"; };
+		98BB834C1C48E57B0081EF4B /* TraditionImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionImageTableViewCell.h; sourceTree = "<group>"; };
+		98BB834D1C48E57B0081EF4B /* TraditionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionImageTableViewCell.m; sourceTree = "<group>"; };
+		98BB834F1C48E7390081EF4B /* RYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCell.h; sourceTree = "<group>"; };
+		98BB83501C48E7390081EF4B /* RYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +161,29 @@
 		983767911C48D0C1004B7EB7 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				98BB83301C48DFC30081EF4B /* FormListHeader.h */,
+				98BB83311C48E38B0081EF4B /* TraditionDatePickerTableViewCell.h */,
+				98BB83321C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m */,
+				98BB83341C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.h */,
+				98BB83351C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m */,
+				98BB83371C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.h */,
+				98BB83381C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.m */,
+				98BB833A1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.h */,
+				98BB833B1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.m */,
+				98BB833D1C48E4240081EF4B /* TraditionTextViewTableViewCell.h */,
+				98BB833E1C48E4240081EF4B /* TraditionTextViewTableViewCell.m */,
+				98BB83401C48E43C0081EF4B /* TraditionTextTableViewCell.h */,
+				98BB83411C48E43C0081EF4B /* TraditionTextTableViewCell.m */,
+				98BB83431C48E53D0081EF4B /* TraditionSwitcherTableViewCell.h */,
+				98BB83441C48E53D0081EF4B /* TraditionSwitcherTableViewCell.m */,
+				98BB83461C48E5500081EF4B /* TraditionSliderTableViewCell.h */,
+				98BB83471C48E5500081EF4B /* TraditionSliderTableViewCell.m */,
+				98BB83491C48E5670081EF4B /* TraditionCustomerTableViewCell.h */,
+				98BB834A1C48E5670081EF4B /* TraditionCustomerTableViewCell.m */,
+				98BB834C1C48E57B0081EF4B /* TraditionImageTableViewCell.h */,
+				98BB834D1C48E57B0081EF4B /* TraditionImageTableViewCell.m */,
+				98BB834F1C48E7390081EF4B /* RYTableViewCell.h */,
+				98BB83501C48E7390081EF4B /* RYTableViewCell.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -259,9 +316,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BB83421C48E43C0081EF4B /* TraditionTextTableViewCell.m in Sources */,
+				98BB833F1C48E4240081EF4B /* TraditionTextViewTableViewCell.m in Sources */,
+				98BB83511C48E7390081EF4B /* RYTableViewCell.m in Sources */,
+				98BB834E1C48E57B0081EF4B /* TraditionImageTableViewCell.m in Sources */,
+				98BB83391C48E3CD0081EF4B /* TraditionValuesPickerTableViewCell.m in Sources */,
+				98BB834B1C48E5670081EF4B /* TraditionCustomerTableViewCell.m in Sources */,
+				98BB833C1C48E40B0081EF4B /* TraditionTextFieldTableViewCell.m in Sources */,
+				98BB83451C48E53D0081EF4B /* TraditionSwitcherTableViewCell.m in Sources */,
 				983767741C48CF85004B7EB7 /* ViewController.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
+				98BB83331C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m in Sources */,
+				98BB83361C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m in Sources */,
 				9837676E1C48CF85004B7EB7 /* main.m in Sources */,
+				98BB83481C48E5500081EF4B /* TraditionSliderTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +526,7 @@
 				9837678D1C48CF85004B7EB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9837678E1C48CF85004B7EB7 /* Build configuration list for PBXNativeTarget "RYTableFormListTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +535,7 @@
 				983767901C48CF85004B7EB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
