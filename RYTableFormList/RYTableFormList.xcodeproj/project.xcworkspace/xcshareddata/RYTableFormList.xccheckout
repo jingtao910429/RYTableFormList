@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0FC6CD57-D7E2-4F3E-B22E-F6BEA4E0802F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0E4B3335850FDD9D14B54CC8222BCF16505348BA</key>
+		<string>https://github.com/jingtao910429/RYTableFormList.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RYTableFormList/RYTableFormList.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0E4B3335850FDD9D14B54CC8222BCF16505348BA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jingtao910429/RYTableFormList.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0E4B3335850FDD9D14B54CC8222BCF16505348BA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0E4B3335850FDD9D14B54CC8222BCF16505348BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RYTableFormList</string>
+		</dict>
+	</array>
+</dict>
+</plist>
