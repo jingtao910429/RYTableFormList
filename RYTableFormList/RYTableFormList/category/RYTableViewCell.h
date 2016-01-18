@@ -12,6 +12,4 @@
 
 - (RYTableViewCell *)initWithReuseIdentifier:(NSString *)string;
 
-- (void)setAttributeNameLabel:(NSDictionary *)itemDict;
-
 @end

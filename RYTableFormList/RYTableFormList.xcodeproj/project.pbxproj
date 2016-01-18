@@ -25,6 +25,7 @@
 		98BB834B1C48E5670081EF4B /* TraditionCustomerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB834A1C48E5670081EF4B /* TraditionCustomerTableViewCell.m */; };
 		98BB834E1C48E57B0081EF4B /* TraditionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB834D1C48E57B0081EF4B /* TraditionImageTableViewCell.m */; };
 		98BB83511C48E7390081EF4B /* RYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB83501C48E7390081EF4B /* RYTableViewCell.m */; };
+		98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		98BB834D1C48E57B0081EF4B /* TraditionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionImageTableViewCell.m; sourceTree = "<group>"; };
 		98BB834F1C48E7390081EF4B /* RYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCell.h; sourceTree = "<group>"; };
 		98BB83501C48E7390081EF4B /* RYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYTableViewCell.m; sourceTree = "<group>"; };
+		98BE8CBA1C4C7A4F000D7477 /* RunTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeTool.h; sourceTree = "<group>"; };
+		98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunTimeTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 		983767951C48D0C1004B7EB7 /* manageTool */ = {
 			isa = PBXGroup;
 			children = (
+				98BE8CBA1C4C7A4F000D7477 /* RunTimeTool.h */,
+				98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */,
 			);
 			path = manageTool;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				98BB83331C48E38B0081EF4B /* TraditionDatePickerTableViewCell.m in Sources */,
 				98BB83361C48E3AB0081EF4B /* TraditionAddressPickerTableViewCell.m in Sources */,
 				9837676E1C48CF85004B7EB7 /* main.m in Sources */,
+				98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */,
 				98BB83481C48E5500081EF4B /* TraditionSliderTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "RYTableViewCell.h"
+#import "RunTimeTool.h"
 #import <objc/runtime.h>
 
 //用static修饰后，不能提供外界访问
@@ -54,89 +55,8 @@ const NSString *baseNameLabel = @"NameLabel";
 - (void)layoutSubviewsInsideBounds:(CGRect)bounds {
     
     NSLog(@"自定义cell公共属性");
-    [self setUIAttributeWithInstance:self.nameLabel attributes:self.attributes];
+    [[RunTimeTool shareInstance] setUIAttributeWithInstance:self.nameLabel attributes:[[RunTimeTool shareInstance] attributes]];
 }
-
-#pragma mark runtime设置nameLabel属性
-
-- (void)setAttributeNameLabel:(NSDictionary *)itemDict {
-    
-    NSDictionary *attributesDict = itemDict;
-    
-    const char * className = [baseNameLabel cStringUsingEncoding:NSASCIIStringEncoding];
-    
-    Class nameLabelClass = objc_getClass(className);
-    
-    if (!nameLabelClass) {
-        // 创建一个类
-        Class superClass = [NSObject class];
-        nameLabelClass = objc_allocateClassPair(superClass, className, 0);
-        // 注册类
-        objc_registerClassPair(nameLabelClass);
-        
-        attributesDict = self.attributes;
-    }
-    
-    id instance = [[nameLabelClass alloc] init];
-    
-    [self setUIAttributeWithInstance:instance attributes:attributesDict];
-    
-}
-
-/**
- *  遍历赋值
- *
- *  @param instance   实例变量
- *  @param attributes 属性列表
- */
-
-- (void)setUIAttributeWithInstance:(id)instance attributes:(NSDictionary *)attributes {
-    
-    [attributes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        
-        if ([self checkIsExistPropertyWithInstance:instance verifyPropertyName:key]) {
-            //利用kvc赋值
-            [instance setValue:key forKey:attributes[key]];
-            
-        }
-        
-    }];
-    
-}
-
-/**
- *  检测对象是否存在该属性
- *
- *  @param instance           实例变量
- *  @param verifyPropertyName 需要检测的属性值
- *
- *  @return BOOL
- */
-
-- (BOOL)checkIsExistPropertyWithInstance:(id)instance verifyPropertyName:(NSString *)verifyPropertyName {
-    
-    unsigned int outCount ;
-    
-    objc_property_t *properties = class_copyPropertyList([instance class], &outCount);
-    
-    for (int i = 0; i < outCount; i ++) {
-        
-        objc_property_t property = properties[i];
-        
-        //  属性名转成字符串
-        NSString *propertyName = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
-        // 判断该属性是否存在
-        
-        if ([propertyName isEqualToString:verifyPropertyName]) {
-            free(properties);
-            return YES;
-        }
-        
-    }
-    free(properties);
-    return NO;
-}
-
 
 #pragma mark getters & setters
 
