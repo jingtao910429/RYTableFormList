@@ -6,8 +6,7 @@
 //  Copyright (c) 2016年 rongyu. All rights reserved.
 //
 
-#ifndef RYTableFormList_FormListHeader_h
-#define RYTableFormList_FormListHeader_h
+const NSString *baseNameLabel = @"BASE_NAME_LABEL";
 
 #import "TraditionDatePickerTableViewCell.h"
 #import "TraditionAddressPickerTableViewCell.h"
@@ -20,4 +19,3 @@
 #import "TraditionCustomerTableViewCell.h"
 #import "TraditionImageTableViewCell.h"
 
-#endif

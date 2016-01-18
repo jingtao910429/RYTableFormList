@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ExampleViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //设置statusBar为白色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    ExampleViewController *exampleViewController = [[ExampleViewController alloc] init];
+    self.window.rootViewController = exampleViewController;
+    
     return YES;
 }
 

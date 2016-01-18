@@ -9,10 +9,9 @@
 #import "RunTimeTool.h"
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
+#import "RYTableViewCellHeader.h"
 
 @interface RunTimeTool ()
-
-
 
 @end
 
@@ -67,8 +66,9 @@
     [attributes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         
         if ([self checkIsExistPropertyWithInstance:instance verifyPropertyName:key]) {
+            
             //利用kvc赋值
-            [instance setValue:key forKey:attributes[key]];
+            [instance setValue:attributes[key] forKey:key];
             
         }
         
@@ -115,7 +115,8 @@
              @"textColor":[UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:1.0f],
              @"textAlignment":@(NSTextAlignmentLeft),
              @"font":[UIFont systemFontOfSize:15],
-             @"numberOfLines":@(2)
+             @"numberOfLines":@(2),
+             @"text":@"test"
              };
 }
 

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
+#import "PickerView.h"
 
 //传统日期空间
 @interface TraditionDatePickerTableViewCell : RYTableViewCell
+
+@property (nonatomic, strong) UILabel      *contentLabel;
+@property (nonatomic, strong) UILabel      *unitLabel;
+
+- (TraditionDatePickerTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent;
 
 @end
