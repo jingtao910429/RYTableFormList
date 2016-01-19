@@ -12,5 +12,8 @@
 #import "RYPulseAnimationAdaptor.h"
 #import "RYRotationAnimationAdaptor.h"
 #import "RYFlyinAnimationAdaptor.h"
+#import "RYOpacityAnimationAdaptor.h"
+#import "RYBackGroundColorAnimationAdaptor.h"
+#import "RYMoveAnimationAdaptor.h"
 
 #endif

@@ -9,8 +9,10 @@
 #import "PickerView.h"
 #import "RYTableViewCellHeader.h"
 #import "PickerView+PickerViewMethod.h"
+#import "RYAnimations.h"
+#import "RYAnimationView.h"
 
-@interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate>
+@interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate,RYAnimationAdaptorDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSLocale        *locale;
@@ -26,11 +28,15 @@
 //普通控件   （一般为一级）
 @property (nonatomic, strong) UIPickerView *normalPickerView;
 
+//动画相关
+@property (nonatomic, strong) RYBackGroundColorAnimationAdaptor *backGroundColorAnimationAdaptor;
+@property (nonatomic, strong) RYMoveAnimationAdaptor *moveAnimationAdaptor;
+
 @end
 
 @implementation PickerView
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id < PickerViewDelegte >)delegate type:(PickerViewType)pickerViewType {
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id <PickerViewDelegte >)delegate type:(PickerViewType)pickerViewType {
     
     self = [super initWithFrame:frame];
     
@@ -72,9 +78,23 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
     UILabel *contentLabel = nil;
-    NSString *contentStr = nil;
     
     return contentLabel;
+}
+
+#pragma mark RYAnimationAdaptorDelegate
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    if (self.backGroundColorAnimationAdaptor.isVerse) {
+        
+        [self removeFromSuperview];
+        
+    }
+}
+
+- (void)animationDidStart:(CAAnimation *)anim {
+    
 }
 
 #pragma mark private Method
@@ -130,14 +150,27 @@
 
 - (void)animationStart {
     
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    self.backGroundView.frame = CGRectMake(0, SCREEN_BOUND_HEIGHT - 240, SCREEN_BOUND_WIDTH, 240);
     
+    self.backGroundColorAnimationAdaptor.isVerse = NO;
+    [self.backGroundColorAnimationAdaptor play];
     
+    self.moveAnimationAdaptor.isVerse = NO;
+    [self.moveAnimationAdaptor play];
+
 }
 
 - (void)animationStop {
     
+    self.backgroundColor = [UIColor clearColor];
+    self.backGroundView.frame = CGRectMake(0, SCREEN_BOUND_HEIGHT, SCREEN_BOUND_WIDTH, 240);
     
+    self.backGroundColorAnimationAdaptor.isVerse = YES;
+    [self.backGroundColorAnimationAdaptor play];
     
+    self.moveAnimationAdaptor.isVerse = YES;
+    [self.moveAnimationAdaptor play];
 }
 
 /**
@@ -145,6 +178,49 @@
  */
 
 - (void)reloadData {
+    
+}
+
+//渐变色
+
+//Transparent Gradient Layer
+- (void) insertTransparentGradient {
+    
+    UIColor *colorOne = [UIColor colorWithRed:(33/255.0)  green:(33/255.0)  blue:(33/255.0)  alpha:0.0];
+    UIColor *colorTwo = [UIColor colorWithRed:(33/255.0)  green:(33/255.0)  blue:(33/255.0)  alpha:1.0];
+    NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
+    NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+    
+    //crate gradient layer
+    CAGradientLayer *headerLayer = [CAGradientLayer layer];
+    
+    headerLayer.colors = colors;
+    headerLayer.locations = locations;
+    headerLayer.frame = self.bounds;
+    
+    [self.layer insertSublayer:headerLayer atIndex:0];
+}
+
+
+//color gradient layer
+- (void) insertColorGradient {
+    
+    UIColor *colorOne = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithRed:(33/255.0)  green:(33/255.0)  blue:(33/255.0)  alpha:1.0];
+    
+    NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
+    NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+    
+    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+    CAGradientLayer *headerLayer = [CAGradientLayer layer];
+    headerLayer.colors = colors;
+    headerLayer.locations = locations;
+    headerLayer.frame = self.bounds;
+    
+    [self.layer insertSublayer:headerLayer above:0];
     
 }
 
@@ -158,8 +234,7 @@
 
 - (void)comfirmBtnClick:(UIButton *)sender {
     
-    self.backgroundColor = [UIColor whiteColor];
-    [self removeFromSuperview];
+    [self animationStop];
     
     if ([self.pickerViewDelegte respondsToSelector:@selector(confirmSelectItem:index:)]) {
         [self.pickerViewDelegte confirmSelectItem:@"" index:0];
@@ -175,7 +250,7 @@
 
 - (void)backGroundViewtap:(UITapGestureRecognizer *)tap {
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     [self removeFromSuperview];
     
 }
@@ -239,6 +314,26 @@
         _normalPickerView.delegate   = self;
     }
     return _normalPickerView;
+}
+
+- (RYBackGroundColorAnimationAdaptor *)backGroundColorAnimationAdaptor {
+    if (!_backGroundColorAnimationAdaptor) {
+        _backGroundColorAnimationAdaptor = [[RYBackGroundColorAnimationAdaptor alloc] init];
+        _backGroundColorAnimationAdaptor.targetView = self;
+        _backGroundColorAnimationAdaptor.delegate = self;
+    }
+    return _backGroundColorAnimationAdaptor;
+}
+
+- (RYMoveAnimationAdaptor *)moveAnimationAdaptor {
+    if (!_moveAnimationAdaptor) {
+        _moveAnimationAdaptor = [[RYMoveAnimationAdaptor alloc] init];
+        _moveAnimationAdaptor.targetView = self.backGroundView;
+        _moveAnimationAdaptor.startPoint = CGPointMake(SCREEN_BOUND_WIDTH/2, SCREEN_BOUND_HEIGHT + 120);
+        _moveAnimationAdaptor.endPoint = CGPointMake(SCREEN_BOUND_WIDTH/2, SCREEN_BOUND_HEIGHT - 120);
+        _moveAnimationAdaptor.delegate = self;
+    }
+    return _moveAnimationAdaptor;
 }
 
 @end

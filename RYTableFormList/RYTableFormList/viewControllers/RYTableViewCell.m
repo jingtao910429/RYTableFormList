@@ -43,7 +43,15 @@
     [self setNeedsDisplay];
 }
 
-#pragma mark
+#pragma mark UI和数据刷新
+
+- (void)reloadData {
+    
+}
+
+- (void)reloadUI {
+    
+}
 
 #pragma mark PickerViewDelegte
 

@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    CALayer *scaleLayer;
+    CALayer *moveLayer;
+    CALayer *rotateLayer;
+    CALayer *groupLayer;
+}
 
 @end
-

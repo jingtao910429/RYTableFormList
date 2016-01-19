@@ -24,6 +24,7 @@
 
 - (void)animationDidStop:(RYAnimationAdaptor *)animAdaptor finished:(BOOL)flag;
 
+
 @end
 
 @interface RYAnimationAdaptor : NSObject

@@ -59,7 +59,11 @@
 
     PickerView *pickerView = [[UIFactory shareInstance] pickerView];
     pickerView.pickerViewDelegte = self;
+    [self.view addSubview:pickerView];
     
+    [pickerView animationStart];    
+    
+    /*
     [UIView animateWithDuration:0.5 animations:^{
         
         pickerView.backgroundColor = [UIColor whiteColor];
@@ -72,7 +76,7 @@
         }
         
     }];
-    
+    */
     
 }
 

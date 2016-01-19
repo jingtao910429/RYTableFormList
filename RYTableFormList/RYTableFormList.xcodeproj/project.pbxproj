@@ -19,6 +19,9 @@
 		985FAAA81C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA01C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m */; };
 		985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */; };
 		985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA51C4DD356000AB2F8 /* RYAnimationView.m */; };
+		985FAAAD1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAAC1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m */; };
+		985FAAB01C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAAF1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m */; };
+		985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAB21C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m */; };
 		9892E6991C4CE3D500AC69C1 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */; };
 		98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */; };
 		98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBE1C4C87EB000D7477 /* UIFactory.m */; };
@@ -74,6 +77,12 @@
 		985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYRotationAnimationAdaptor.m; sourceTree = "<group>"; };
 		985FAAA41C4DD356000AB2F8 /* RYAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYAnimationView.h; sourceTree = "<group>"; };
 		985FAAA51C4DD356000AB2F8 /* RYAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYAnimationView.m; sourceTree = "<group>"; };
+		985FAAAB1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYOpacityAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAAAC1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYOpacityAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAAAE1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYBackGroundColorAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAAAF1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYBackGroundColorAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAAB11C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYMoveAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAAB21C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYMoveAnimationAdaptor.m; sourceTree = "<group>"; };
 		9892E6971C4CE3D500AC69C1 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		98BE8CBA1C4C7A4F000D7477 /* RunTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeTool.h; sourceTree = "<group>"; };
@@ -267,6 +276,12 @@
 				985FAAA01C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m */,
 				985FAAA11C4DD356000AB2F8 /* RYRotationAnimationAdaptor.h */,
 				985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */,
+				985FAAAB1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.h */,
+				985FAAAC1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m */,
+				985FAAAE1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.h */,
+				985FAAAF1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m */,
+				985FAAB11C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.h */,
+				985FAAB21C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m */,
 			);
 			path = AnimationAdaptors;
 			sourceTree = "<group>";
@@ -415,6 +430,7 @@
 				98BE8CE31C4CB9EE000D7477 /* TraditionImageTableViewCell.m in Sources */,
 				98BE8CC41C4CAE9D000D7477 /* PickerView.m in Sources */,
 				983767741C48CF85004B7EB7 /* ViewController.m in Sources */,
+				985FAAB01C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m in Sources */,
 				98BE8CE11C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m in Sources */,
 				985FAAA61C4DD356000AB2F8 /* RYAnimationAdaptor.m in Sources */,
 				98BE8CE01C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m in Sources */,
@@ -424,10 +440,12 @@
 				98BE8CE61C4CB9EE000D7477 /* TraditionTextFieldTableViewCell.m in Sources */,
 				985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */,
 				98BE8CDF1C4CB9EE000D7477 /* RYTableViewCell.m in Sources */,
+				985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */,
 				98BE8CE21C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m in Sources */,
 				98BE8CE51C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
 				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,
+				985FAAAD1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m in Sources */,
 				98BE8CC71C4CB9A6000D7477 /* PickerView+PickerViewMethod.m in Sources */,
 				98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */,
 				98BE8CEE1C4CBB4D000D7477 /* ExampleViewController.m in Sources */,

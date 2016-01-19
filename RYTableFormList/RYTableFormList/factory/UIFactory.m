@@ -42,7 +42,7 @@
     
     if (!_pickerView) {
         _pickerView = [[PickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH,SCREEN_BOUND_HEIGHT) delegate:nil type:PickerViewTypeNone];
-        _pickerView.backgroundColor = [UIColor whiteColor];
+        _pickerView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     }
     return _pickerView;
 }
