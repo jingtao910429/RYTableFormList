@@ -8,7 +8,7 @@
 
 #import "ExampleViewController.h"
 #import "FormListHeader.h"
-#import "TraditionDatePickerTableViewCell.h"
+#import "TraditionPickersTableViewCell.h"
 #import "UIFactory.h"
 #import "PickerView.h"
 #import "PickerView+PickerViewMethod.h"
@@ -45,13 +45,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TraditionDatePickerTableViewCell *traditionDatePickerTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
+    TraditionPickersTableViewCell *traditionPickersTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
     
-    if (!traditionDatePickerTableViewCell) {
-        traditionDatePickerTableViewCell = [[TraditionDatePickerTableViewCell alloc] initWithUnitType:UITableViewCellUnitTypeHave content:@"内容" unitContent:@"元"];
+    if (!traditionPickersTableViewCell) {
+        traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] initWithUnitType:UITableViewCellUnitTypeHave content:@"内容" unitContent:@"元"];
     }
     
-    return traditionDatePickerTableViewCell;
+    return traditionPickersTableViewCell;
     
 }
 

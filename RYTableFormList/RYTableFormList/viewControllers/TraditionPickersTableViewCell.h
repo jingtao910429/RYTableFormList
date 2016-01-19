@@ -11,11 +11,11 @@
 #import "PickerView.h"
 
 //传统日期空间
-@interface TraditionDatePickerTableViewCell : RYTableViewCell
+@interface TraditionPickersTableViewCell : RYTableViewCell
 
 @property (nonatomic, strong) UILabel      *contentLabel;
 @property (nonatomic, strong) UILabel      *unitLabel;
 
-- (TraditionDatePickerTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent;
+- (TraditionPickersTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent;
 
 @end

@@ -30,7 +30,7 @@
 		98BE8CDF1C4CB9EE000D7477 /* RYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CCA1C4CB9EE000D7477 /* RYTableViewCell.m */; };
 		98BE8CE01C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CCC1C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m */; };
 		98BE8CE11C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CCE1C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m */; };
-		98BE8CE21C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD01C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m */; };
+		98BE8CE21C4CB9EE000D7477 /* TraditionPickersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD01C4CB9EE000D7477 /* TraditionPickersTableViewCell.m */; };
 		98BE8CE31C4CB9EE000D7477 /* TraditionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD21C4CB9EE000D7477 /* TraditionImageTableViewCell.m */; };
 		98BE8CE41C4CB9EE000D7477 /* TraditionSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD41C4CB9EE000D7477 /* TraditionSliderTableViewCell.m */; };
 		98BE8CE51C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD61C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m */; };
@@ -99,8 +99,8 @@
 		98BE8CCC1C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionAddressPickerTableViewCell.m; sourceTree = "<group>"; };
 		98BE8CCD1C4CB9EE000D7477 /* TraditionCustomerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionCustomerTableViewCell.h; sourceTree = "<group>"; };
 		98BE8CCE1C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionCustomerTableViewCell.m; sourceTree = "<group>"; };
-		98BE8CCF1C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionDatePickerTableViewCell.h; sourceTree = "<group>"; };
-		98BE8CD01C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionDatePickerTableViewCell.m; sourceTree = "<group>"; };
+		98BE8CCF1C4CB9EE000D7477 /* TraditionPickersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionPickersTableViewCell.h; sourceTree = "<group>"; };
+		98BE8CD01C4CB9EE000D7477 /* TraditionPickersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionPickersTableViewCell.m; sourceTree = "<group>"; };
 		98BE8CD11C4CB9EE000D7477 /* TraditionImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionImageTableViewCell.h; sourceTree = "<group>"; };
 		98BE8CD21C4CB9EE000D7477 /* TraditionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionImageTableViewCell.m; sourceTree = "<group>"; };
 		98BE8CD31C4CB9EE000D7477 /* TraditionSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSliderTableViewCell.h; sourceTree = "<group>"; };
@@ -304,8 +304,8 @@
 				98BE8CCC1C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m */,
 				98BE8CCD1C4CB9EE000D7477 /* TraditionCustomerTableViewCell.h */,
 				98BE8CCE1C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m */,
-				98BE8CCF1C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.h */,
-				98BE8CD01C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m */,
+				98BE8CCF1C4CB9EE000D7477 /* TraditionPickersTableViewCell.h */,
+				98BE8CD01C4CB9EE000D7477 /* TraditionPickersTableViewCell.m */,
 				98BE8CD11C4CB9EE000D7477 /* TraditionImageTableViewCell.h */,
 				98BE8CD21C4CB9EE000D7477 /* TraditionImageTableViewCell.m */,
 				98BE8CD31C4CB9EE000D7477 /* TraditionSliderTableViewCell.h */,
@@ -441,7 +441,7 @@
 				985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */,
 				98BE8CDF1C4CB9EE000D7477 /* RYTableViewCell.m in Sources */,
 				985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */,
-				98BE8CE21C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m in Sources */,
+				98BE8CE21C4CB9EE000D7477 /* TraditionPickersTableViewCell.m in Sources */,
 				98BE8CE51C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
 				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,

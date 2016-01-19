@@ -29,8 +29,8 @@
     
     if (!tableViewCell) {
         
-        if ([tableView isKindOfClass:[TraditionDatePickerTableViewCell class]]) {
-            tableViewCell = [[TraditionDatePickerTableViewCell alloc] init];
+        if ([tableView isKindOfClass:[TraditionPickersTableViewCell class]]) {
+            tableViewCell = [[TraditionPickersTableViewCell alloc] init];
         }
         
     }

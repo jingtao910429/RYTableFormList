@@ -6,18 +6,18 @@
 //  Copyright (c) 2016年 rongyu. All rights reserved.
 //
 
-#import "TraditionDatePickerTableViewCell.h"
+#import "TraditionPickersTableViewCell.h"
 #import "RunTimeTool.h"
 #import "UIFactory.h"
 #import "PickerView+PickerViewMethod.h"
 
-@interface TraditionDatePickerTableViewCell ()
+@interface TraditionPickersTableViewCell ()
 
 @end
 
-@implementation TraditionDatePickerTableViewCell
+@implementation TraditionPickersTableViewCell
 
-- (TraditionDatePickerTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent {
+- (TraditionPickersTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent {
     
     self.content = pContent;
     
@@ -45,7 +45,7 @@
     return self;
 }
 
-- (TraditionDatePickerTableViewCell *)init {
+- (TraditionPickersTableViewCell *)init {
     
     if ([super initWithReuseIdentifier:@"TraditionDatePickerElement"]){
         
