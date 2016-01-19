@@ -27,6 +27,7 @@
 @property (nonatomic, strong) UIPickerView    *addressPickerView;
 //普通控件   （一般为一级）
 @property (nonatomic, strong) UIPickerView    *normalPickerView;
+@property (nonatomic, strong) UIView          *backGroundView;
 
 //动画相关
 @property (nonatomic, strong) RYBackGroundColorAnimationAdaptor *backGroundColorAnimationAdaptor;

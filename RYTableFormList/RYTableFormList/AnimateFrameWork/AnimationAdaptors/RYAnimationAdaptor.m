@@ -108,7 +108,7 @@
 }
 
 #pragma mark - Help
--(void)log:(NSString*)msg{
+- (void)log:(NSString*)msg{
 
 }
 

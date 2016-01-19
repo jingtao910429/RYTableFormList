@@ -61,22 +61,7 @@
     pickerView.pickerViewDelegte = self;
     [self.view addSubview:pickerView];
     
-    [pickerView animationStart];    
-    
-    /*
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        pickerView.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:pickerView];
-        
-    } completion:^(BOOL finished) {
-        
-        if (finished) {
-            pickerView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6f];
-        }
-        
-    }];
-    */
+    [pickerView animationStart];
     
 }
 
