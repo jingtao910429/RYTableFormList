@@ -25,7 +25,12 @@
 - (RYTableViewCell *)initWithReuseIdentifier:(NSString *)string {
     
     if ([super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:string]) {
-        [self createSubviews];
+        
+        if ([self conformsToProtocol:@protocol(ReloadContentProtocol)]) {
+            [self createSubviews];
+        }else {
+            NSAssert(0, @"子类必须要实现APIManager这个protocol。");
+        }
     }
     
     return self;
@@ -36,6 +41,14 @@
     [self.contentView addSubview:self.nameLabel];
     [[RunTimeTool shareInstance] setUIAttributeWithInstance:self.nameLabel attributes:[[RunTimeTool shareInstance] attributes]];
     [self setNeedsDisplay];
+}
+
+#pragma mark
+
+#pragma mark PickerViewDelegte
+
+- (void)confirmSelectItem:(NSString *)value index:(NSInteger)index {
+    
 }
 
 #pragma mark getters & setters

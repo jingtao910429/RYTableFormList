@@ -60,7 +60,7 @@
     
     [super layoutSubviews];
     
-    self.ownerContentLabelAttributesDict = @{
+    self.contentLabelAttributesDict = @{
                                              @"text":self.content,
                                              @"textColor":[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0f],
                                              @"textAlignment":@(NSTextAlignmentRight),
@@ -70,16 +70,15 @@
     
     if (unitType == UITableViewCellUnitTypeNone) {
         
-        self.ownerUnitLabelAttributesDict = nil;
+        self.unitLabelAttributesDict = nil;
         
     }else {
         
         CGRect frame = _contentLabel.frame;
         frame.origin.x -= (SINGLE_LETTER_WIDTH * ((NSString *)self.unitContent).length + 5);
-        
         self.contentLabel.frame = frame;
         
-        self.ownerUnitLabelAttributesDict = @{
+        self.unitLabelAttributesDict = @{
                                               @"text":self.unitContent,
                                               @"textAlignment":@(NSTextAlignmentRight),
                                               @"numberOfLines":@(1),
@@ -88,12 +87,12 @@
                                               @"tag":@(UNITCONTENT_TAG)};
     }
     
-    if (self.ownerContentLabelAttributesDict) {
-        [[RunTimeTool shareInstance] setUIAttributeWithInstance:_contentLabel attributes:self.ownerContentLabelAttributesDict];
+    if (self.contentLabelAttributesDict) {
+        [[RunTimeTool shareInstance] setUIAttributeWithInstance:_contentLabel attributes:self.contentLabelAttributesDict];
     }
     
-    if (self.ownerUnitLabelAttributesDict) {
-        [[RunTimeTool shareInstance] setUIAttributeWithInstance:_unitLabel attributes:self.ownerUnitLabelAttributesDict];
+    if (self.unitLabelAttributesDict) {
+        [[RunTimeTool shareInstance] setUIAttributeWithInstance:_unitLabel attributes:self.unitLabelAttributesDict];
     }
     
     [self setNeedsLayout];

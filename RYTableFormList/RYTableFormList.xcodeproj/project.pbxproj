@@ -14,6 +14,11 @@
 		983767791C48CF85004B7EB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983767781C48CF85004B7EB7 /* Images.xcassets */; };
 		9837677C1C48CF85004B7EB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9837677A1C48CF85004B7EB7 /* LaunchScreen.xib */; };
 		983767881C48CF85004B7EB7 /* RYTableFormListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767871C48CF85004B7EB7 /* RYTableFormListTests.m */; };
+		985FAAA61C4DD356000AB2F8 /* RYAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAA9B1C4DD356000AB2F8 /* RYAnimationAdaptor.m */; };
+		985FAAA71C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAA9E1C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m */; };
+		985FAAA81C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA01C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m */; };
+		985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */; };
+		985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAA51C4DD356000AB2F8 /* RYAnimationView.m */; };
 		9892E6991C4CE3D500AC69C1 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */; };
 		98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */; };
 		98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBE1C4C87EB000D7477 /* UIFactory.m */; };
@@ -57,6 +62,18 @@
 		983767811C48CF85004B7EB7 /* RYTableFormListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RYTableFormListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		983767861C48CF85004B7EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983767871C48CF85004B7EB7 /* RYTableFormListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYTableFormListTests.m; sourceTree = "<group>"; };
+		985FAA971C4DCB27000AB2F8 /* ReloadContentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReloadContentProtocol.h; sourceTree = "<group>"; };
+		985FAA9A1C4DD356000AB2F8 /* RYAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAA9B1C4DD356000AB2F8 /* RYAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAA9C1C4DD356000AB2F8 /* RYAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYAnimations.h; sourceTree = "<group>"; };
+		985FAA9D1C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYFlyinAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAA9E1C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYFlyinAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAA9F1C4DD356000AB2F8 /* RYPulseAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYPulseAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAAA01C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYPulseAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAAA11C4DD356000AB2F8 /* RYRotationAnimationAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYRotationAnimationAdaptor.h; sourceTree = "<group>"; };
+		985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYRotationAnimationAdaptor.m; sourceTree = "<group>"; };
+		985FAAA41C4DD356000AB2F8 /* RYAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYAnimationView.h; sourceTree = "<group>"; };
+		985FAAA51C4DD356000AB2F8 /* RYAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYAnimationView.m; sourceTree = "<group>"; };
 		9892E6971C4CE3D500AC69C1 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		98BE8CBA1C4C7A4F000D7477 /* RunTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeTool.h; sourceTree = "<group>"; };
@@ -134,6 +151,7 @@
 		9837676A1C48CF85004B7EB7 /* RYTableFormList */ = {
 			isa = PBXGroup;
 			children = (
+				985FAA981C4DD2D4000AB2F8 /* AnimateFrameWork */,
 				98BE8CC81C4CB9E8000D7477 /* viewControllers */,
 				983767911C48D0C1004B7EB7 /* category */,
 				983767921C48D0C1004B7EB7 /* component */,
@@ -185,6 +203,7 @@
 				9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */,
 				98BE8CC51C4CB9A6000D7477 /* PickerView+PickerViewMethod.h */,
 				98BE8CC61C4CB9A6000D7477 /* PickerView+PickerViewMethod.m */,
+				985FAA971C4DCB27000AB2F8 /* ReloadContentProtocol.h */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -225,6 +244,40 @@
 				98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */,
 			);
 			path = manageTool;
+			sourceTree = "<group>";
+		};
+		985FAA981C4DD2D4000AB2F8 /* AnimateFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				985FAA991C4DD356000AB2F8 /* AnimationAdaptors */,
+				985FAAA31C4DD356000AB2F8 /* Views */,
+			);
+			path = AnimateFrameWork;
+			sourceTree = "<group>";
+		};
+		985FAA991C4DD356000AB2F8 /* AnimationAdaptors */ = {
+			isa = PBXGroup;
+			children = (
+				985FAA9A1C4DD356000AB2F8 /* RYAnimationAdaptor.h */,
+				985FAA9B1C4DD356000AB2F8 /* RYAnimationAdaptor.m */,
+				985FAA9C1C4DD356000AB2F8 /* RYAnimations.h */,
+				985FAA9D1C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.h */,
+				985FAA9E1C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m */,
+				985FAA9F1C4DD356000AB2F8 /* RYPulseAnimationAdaptor.h */,
+				985FAAA01C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m */,
+				985FAAA11C4DD356000AB2F8 /* RYRotationAnimationAdaptor.h */,
+				985FAAA21C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m */,
+			);
+			path = AnimationAdaptors;
+			sourceTree = "<group>";
+		};
+		985FAAA31C4DD356000AB2F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				985FAAA41C4DD356000AB2F8 /* RYAnimationView.h */,
+				985FAAA51C4DD356000AB2F8 /* RYAnimationView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98BE8CC81C4CB9E8000D7477 /* viewControllers */ = {
@@ -358,18 +411,23 @@
 			files = (
 				98BE8CE91C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m in Sources */,
 				98BE8CE41C4CB9EE000D7477 /* TraditionSliderTableViewCell.m in Sources */,
+				985FAAA81C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m in Sources */,
 				98BE8CE31C4CB9EE000D7477 /* TraditionImageTableViewCell.m in Sources */,
 				98BE8CC41C4CAE9D000D7477 /* PickerView.m in Sources */,
 				983767741C48CF85004B7EB7 /* ViewController.m in Sources */,
 				98BE8CE11C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m in Sources */,
+				985FAAA61C4DD356000AB2F8 /* RYAnimationAdaptor.m in Sources */,
 				98BE8CE01C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m in Sources */,
 				98BE8CE81C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m in Sources */,
 				9892E6991C4CE3D500AC69C1 /* UIView+Additions.m in Sources */,
+				985FAAA71C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m in Sources */,
 				98BE8CE61C4CB9EE000D7477 /* TraditionTextFieldTableViewCell.m in Sources */,
+				985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */,
 				98BE8CDF1C4CB9EE000D7477 /* RYTableViewCell.m in Sources */,
 				98BE8CE21C4CB9EE000D7477 /* TraditionDatePickerTableViewCell.m in Sources */,
 				98BE8CE51C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
+				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,
 				98BE8CC71C4CB9A6000D7477 /* PickerView+PickerViewMethod.m in Sources */,
 				98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */,
 				98BE8CEE1C4CBB4D000D7477 /* ExampleViewController.m in Sources */,
