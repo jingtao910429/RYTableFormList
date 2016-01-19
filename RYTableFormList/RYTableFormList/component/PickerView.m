@@ -12,25 +12,26 @@
 #import "RYAnimations.h"
 #import "RYAnimationView.h"
 
-@interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate,RYAnimationAdaptorDelegate>
+@interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate,RYAnimationAdaptorDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSLocale        *locale;
 
-@property (nonatomic, strong) UIView    *lineView;
-@property (nonatomic, strong) UIButton  *confirmButton;
-@property (nonatomic, assign) NSInteger pickerViewType;
+@property (nonatomic, strong) UIView          *lineView;
+@property (nonatomic, strong) UIButton        *confirmButton;
+@property (nonatomic, assign) NSInteger       pickerViewType;
 
 //日期控件
-@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (nonatomic, strong) UIDatePicker    *datePicker;
 //省市县控件 （同normal，一般为三级）
-@property (nonatomic, strong) UIPickerView *addressPickerView;
+@property (nonatomic, strong) UIPickerView    *addressPickerView;
 //普通控件   （一般为一级）
-@property (nonatomic, strong) UIPickerView *normalPickerView;
+@property (nonatomic, strong) UIPickerView    *normalPickerView;
 
 //动画相关
 @property (nonatomic, strong) RYBackGroundColorAnimationAdaptor *backGroundColorAnimationAdaptor;
-@property (nonatomic, strong) RYMoveAnimationAdaptor *moveAnimationAdaptor;
+@property (nonatomic, strong) RYMoveAnimationAdaptor            *moveAnimationAdaptor;
+@property (nonatomic, assign) BOOL            animationOver;
 
 @end
 
@@ -43,6 +44,7 @@
     if (self) {
         self.pickerViewType = pickerViewType;
         self.pickerViewDelegte = delegate;
+        [self initData];
         [self createSubviews];
     }
     return self;
@@ -87,14 +89,24 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     
     if (self.backGroundColorAnimationAdaptor.isVerse) {
-        
         [self removeFromSuperview];
-        
+    }else {
+        self.animationOver = YES;
     }
 }
 
 - (void)animationDidStart:(CAAnimation *)anim {
     
+}
+
+#pragma mark UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if (touch.view == self.backGroundView && ![touch.view isKindOfClass:[UIButton class]]) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark private Method
@@ -105,13 +117,18 @@
 
 - (void)initData {
     
+    self.animationOver = YES;
+    
     _formatter = [[NSDateFormatter alloc] init];
     [_formatter setDateFormat:@"yyyy-MM-dd"];
     
     _locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_Hans_CN"];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backGroundViewtap:)];
+    tap.cancelsTouchesInView = NO;
+    tap.delegate = self;
     [self addGestureRecognizer:tap];
+    
 }
 
 
@@ -123,7 +140,6 @@
     
     [self.backGroundView addSubview:self.lineView];
     [self.backGroundView addSubview:self.confirmButton];
-    
     
     switch (self.pickerViewType) {
         case PickerViewTypeDate:{
@@ -148,28 +164,34 @@
     [self addSubview:self.backGroundView];
 }
 
+/**
+ *  动画开始
+ */
+
 - (void)animationStart {
     
-    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-    self.backGroundView.frame = CGRectMake(0, SCREEN_BOUND_HEIGHT - 240, SCREEN_BOUND_WIDTH, 240);
+    self.animationOver = NO;
+    
+    self.backgroundColor                         = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    self.backGroundView.frame                    = CGRectMake(0, SCREEN_BOUND_HEIGHT - 240, SCREEN_BOUND_WIDTH, 240);
     
     self.backGroundColorAnimationAdaptor.isVerse = NO;
     [self.backGroundColorAnimationAdaptor play];
     
-    self.moveAnimationAdaptor.isVerse = NO;
+    self.moveAnimationAdaptor.isVerse            = NO;
     [self.moveAnimationAdaptor play];
 
 }
 
 - (void)animationStop {
     
-    self.backgroundColor = [UIColor clearColor];
-    self.backGroundView.frame = CGRectMake(0, SCREEN_BOUND_HEIGHT, SCREEN_BOUND_WIDTH, 240);
+    self.backgroundColor                         = [UIColor clearColor];
+    self.backGroundView.frame                    = CGRectMake(0, SCREEN_BOUND_HEIGHT, SCREEN_BOUND_WIDTH, 240);
     
     self.backGroundColorAnimationAdaptor.isVerse = YES;
     [self.backGroundColorAnimationAdaptor play];
     
-    self.moveAnimationAdaptor.isVerse = YES;
+    self.moveAnimationAdaptor.isVerse            = YES;
     [self.moveAnimationAdaptor play];
 }
 
@@ -234,12 +256,15 @@
 
 - (void)comfirmBtnClick:(UIButton *)sender {
     
-    [self animationStop];
-    
-    if ([self.pickerViewDelegte respondsToSelector:@selector(confirmSelectItem:index:)]) {
-        [self.pickerViewDelegte confirmSelectItem:@"" index:0];
+    if (self.animationOver) {
+        
+        [self animationStop];
+        
+        if ([self.pickerViewDelegte respondsToSelector:@selector(confirmSelectItem:index:)]) {
+            [self.pickerViewDelegte confirmSelectItem:@"" index:0];
+        }
     }
-    
+
 }
 
 /**
@@ -250,8 +275,9 @@
 
 - (void)backGroundViewtap:(UITapGestureRecognizer *)tap {
     
-    self.backgroundColor = [UIColor clearColor];
-    [self removeFromSuperview];
+    if (self.animationOver) {
+        [self animationStop];
+    }
     
 }
 
@@ -260,9 +286,8 @@
 - (UIView *)backGroundView {
     
     if (!_backGroundView) {
-        _backGroundView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_BOUND_HEIGHT - 240, SCREEN_BOUND_WIDTH, 240)];
-        _backGroundView.backgroundColor = [UIColor whiteColor];
-        _backGroundView.userInteractionEnabled = YES;
+        _backGroundView                        = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_BOUND_HEIGHT - 240, SCREEN_BOUND_WIDTH, 240)];
+        _backGroundView.backgroundColor        = [UIColor whiteColor];
     }
     return _backGroundView;
 }
@@ -290,7 +315,7 @@
 
 - (UIDatePicker *)datePicker {
     if (!_datePicker) {
-        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
+        _datePicker                  = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
         _datePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _datePicker.datePickerMode   = UIDatePickerModeDate;
         _datePicker.locale           = _locale;
@@ -300,7 +325,7 @@
 
 - (UIPickerView *)addressPickerView {
     if (!_addressPickerView) {
-        _addressPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
+        _addressPickerView            = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
         _addressPickerView.dataSource = self;
         _addressPickerView.delegate   = self;
     }
@@ -309,7 +334,7 @@
 
 - (UIPickerView *)normalPickerView {
     if (!_normalPickerView) {
-        _normalPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
+        _normalPickerView            = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUND_WIDTH, self.backGroundView.frame.size.height - 50)];
         _normalPickerView.dataSource = self;
         _normalPickerView.delegate   = self;
     }
@@ -330,10 +355,11 @@
         _moveAnimationAdaptor = [[RYMoveAnimationAdaptor alloc] init];
         _moveAnimationAdaptor.targetView = self.backGroundView;
         _moveAnimationAdaptor.startPoint = CGPointMake(SCREEN_BOUND_WIDTH/2, SCREEN_BOUND_HEIGHT + 120);
-        _moveAnimationAdaptor.endPoint = CGPointMake(SCREEN_BOUND_WIDTH/2, SCREEN_BOUND_HEIGHT - 120);
-        _moveAnimationAdaptor.delegate = self;
+        _moveAnimationAdaptor.endPoint   = CGPointMake(SCREEN_BOUND_WIDTH/2, SCREEN_BOUND_HEIGHT - 120);
+        _moveAnimationAdaptor.delegate   = self;
     }
     return _moveAnimationAdaptor;
 }
+
 
 @end
