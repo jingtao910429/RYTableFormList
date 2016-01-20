@@ -48,8 +48,13 @@
     TraditionPickersTableViewCell *traditionPickersTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
     
     if (!traditionPickersTableViewCell) {
-        traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] initWithUnitType:UITableViewCellUnitTypeHave content:@"内容" unitContent:@"元"];
+        traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
     }
+    
+    traditionPickersTableViewCell.content = @"测试";
+    traditionPickersTableViewCell.unitContent = @"元";
+    traditionPickersTableViewCell.unitType = UITableViewCellUnitTypeHave;
+    [traditionPickersTableViewCell reloadData];
     
     return traditionPickersTableViewCell;
     
@@ -62,6 +67,9 @@
     [self.view addSubview:pickerView];
     
     [pickerView animationStart];
+    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"],@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"],@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"], nil];
+    [pickerView reloadData];
+    
     
 }
 

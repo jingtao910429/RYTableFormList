@@ -55,32 +55,44 @@
 
 //列数
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 0;
+    
+    NSLog(@"data =- %d",self.dataSource.count);
+    
+    return self.dataSource.count;
 }
 
 //行数
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 0;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-    return @"";
-    
+    return [self.dataSource[component] count];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 40;
+    return 45;
 }
 
 //选中之后执行方法
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
+    //更新组件
+    for (int i = component; i < self.dataSource.count ; i ++) {
+        
+        for (int j = i + 1; j < self.dataSource.count ; j ++) {
+            
+            [pickerView selectRow:0 inComponent:j animated:YES];
+            [pickerView reloadComponent:j];
+            
+        }
+        
+    }
+    
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
-    UILabel *contentLabel = nil;
+    UILabel *contentLabel = view ? (UILabel *) view : [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_BOUND_WIDTH, 20.0f)];
+    contentLabel.textAlignment = NSTextAlignmentCenter;
+    contentLabel.text = self.dataSource[component][row];
     
     return contentLabel;
 }
@@ -142,26 +154,6 @@
     [self.backGroundView addSubview:self.lineView];
     [self.backGroundView addSubview:self.confirmButton];
     
-    switch (self.pickerViewType) {
-        case PickerViewTypeDate:{
-            [self.backGroundView addSubview:_datePicker];
-        }
-            break;
-        case PickerViewTypeAddress:{
-            [self.backGroundView addSubview:_addressPickerView];
-        }
-            break;
-        case PickerViewTypeNormal:{
-            [self.backGroundView addSubview:_normalPickerView];
-        }
-            break;
-        case PickerViewTypeNone:{
-            
-        }
-            break;
-        default:
-            break;
-    }
     [self addSubview:self.backGroundView];
 }
 
@@ -202,6 +194,31 @@
 
 - (void)reloadData {
     
+    //TODO:测试
+    self.pickerViewType = PickerViewTypeNormal;
+    
+    switch (self.pickerViewType) {
+        case PickerViewTypeDate:{
+            [self.backGroundView addSubview:self.datePicker];
+        }
+            break;
+        case PickerViewTypeAddress:{
+            [self.backGroundView addSubview:self.addressPickerView];
+        }
+            break;
+        case PickerViewTypeNormal:{
+            [self.backGroundView addSubview:self.normalPickerView];
+        }
+            break;
+        case PickerViewTypeNone:{
+            
+        }
+            break;
+        default:
+            break;
+    }
+    
+    //[self.normalPickerView reloadAllComponents];
 }
 
 #pragma mark event response
@@ -277,6 +294,7 @@
         _datePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _datePicker.datePickerMode   = UIDatePickerModeDate;
         _datePicker.locale           = _locale;
+        
     }
     return _datePicker;
 }

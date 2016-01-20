@@ -20,9 +20,12 @@
 //索引值（section * 1000 + row）
 @property (nonatomic, assign) NSInteger index;
 
-@property (nonatomic, copy) NSString *content;
-@property (nonatomic, copy) NSString *unitContent;
+@property (nonatomic, copy)   NSString *content;
+@property (nonatomic, copy)   NSString *unitContent;
+@property (nonatomic, assign) UITableViewCellUnitType unitType;
 
 - (RYTableViewCell *)initWithReuseIdentifier:(NSString *)string;
+
+- (void)reloadData;
 
 @end

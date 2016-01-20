@@ -102,6 +102,9 @@ typedef NS_ENUM(NSInteger, PickerViewNormalType){
 
 @interface PickerView : UIView
 
+//Picker数据源，根据不同类型，数据源数据结构可能有所变化
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id <PickerViewDelegte> )delegate type:(PickerViewType)pickerViewType;
 
 /**

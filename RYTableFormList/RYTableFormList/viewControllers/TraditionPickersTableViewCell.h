@@ -16,6 +16,6 @@
 @property (nonatomic, strong) UILabel      *contentLabel;
 @property (nonatomic, strong) UILabel      *unitLabel;
 
-- (TraditionPickersTableViewCell *)initWithUnitType:(UITableViewCellUnitType)unitType content:(NSString *)pContent unitContent:(NSString *)pUnitContent;
+- (void)reloadData;
 
 @end
