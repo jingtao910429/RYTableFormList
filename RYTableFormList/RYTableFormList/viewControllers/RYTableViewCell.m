@@ -16,6 +16,7 @@
 
 @interface RYTableViewCell ()
 
+//条目名称
 @property (nonatomic, strong) UILabel *nameLabel;
 
 @end
@@ -47,6 +48,10 @@
 
 - (void)reloadData {
     
+    CGSize size = [self.itemContent sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    self.nameLabel.frame = CGRectMake(LEFT_SPACE, 0, size.width, self.frame.size.height);
+    
+    self.nameLabel.text = self.itemContent;
 }
 
 - (void)reloadUI {
@@ -63,7 +68,11 @@
 
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_SPACE, 0, TITLE_LABEL_WIDTH, self.frame.size.height)];
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_SPACE, 0, TITLE_LABEL_WIDTH + 20, self.frame.size.height)];
+        _nameLabel.font = [UIFont systemFontOfSize:15];
+        _nameLabel.textColor = [UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:1.0f];
+        _nameLabel.textAlignment = NSTextAlignmentLeft;
+        _nameLabel.numberOfLines = 2;
         
     }
     return _nameLabel;

@@ -39,6 +39,7 @@
 		98BE8CE81C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CDC1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m */; };
 		98BE8CE91C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CDE1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m */; };
 		98BE8CEE1C4CBB4D000D7477 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CED1C4CBB4D000D7477 /* ExampleViewController.m */; };
+		98D34F231C5F55AB0053FE00 /* NSObject+isValidValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D34F221C5F55AB0053FE00 /* NSObject+isValidValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		98BE8CEB1C4CBA26000D7477 /* RYTableViewCellHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCellHeader.h; sourceTree = "<group>"; };
 		98BE8CEC1C4CBB4D000D7477 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
 		98BE8CED1C4CBB4D000D7477 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
+		98D34F211C5F55AB0053FE00 /* NSObject+isValidValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isValidValue.h"; sourceTree = "<group>"; };
+		98D34F221C5F55AB0053FE00 /* NSObject+isValidValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isValidValue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 				98BE8CC51C4CB9A6000D7477 /* PickerView+PickerViewMethod.h */,
 				98BE8CC61C4CB9A6000D7477 /* PickerView+PickerViewMethod.m */,
 				985FAA971C4DCB27000AB2F8 /* ReloadContentProtocol.h */,
+				98D34F211C5F55AB0053FE00 /* NSObject+isValidValue.h */,
+				98D34F221C5F55AB0053FE00 /* NSObject+isValidValue.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */,
 				98BE8CE21C4CB9EE000D7477 /* TraditionPickersTableViewCell.m in Sources */,
 				98BE8CE51C4CB9EE000D7477 /* TraditionSwitcherTableViewCell.m in Sources */,
+				98D34F231C5F55AB0053FE00 /* NSObject+isValidValue.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
 				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,
 				985FAAAD1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m in Sources */,

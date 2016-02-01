@@ -6,8 +6,6 @@
 //  Copyright (c) 2016年 rongyu. All rights reserved.
 //
 
-const NSString *baseNameLabel = @"BASE_NAME_LABEL";
-
 #define SCREEN_BOUND_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_BOUND_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 

@@ -11,6 +11,7 @@
 #import "PickerView+PickerViewMethod.h"
 #import "RYAnimations.h"
 #import "RYAnimationView.h"
+#import "NSObject+isValidValue.h"
 
 @interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate,RYAnimationAdaptorDelegate,UIGestureRecognizerDelegate>
 
@@ -19,7 +20,6 @@
 
 @property (nonatomic, strong) UIView          *lineView;
 @property (nonatomic, strong) UIButton        *confirmButton;
-@property (nonatomic, assign) NSInteger       pickerViewType;
 
 //日期控件
 @property (nonatomic, strong) UIDatePicker    *datePicker;
@@ -43,7 +43,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.pickerViewType = pickerViewType;
+        self.popUpPickerViewType = pickerViewType;
         self.pickerViewDelegte = delegate;
         [self initData];
         [self createSubviews];
@@ -54,28 +54,26 @@
 #pragma mark UIPickerViewDataSource,UIPickerViewDelegate
 
 //列数
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
-    NSLog(@"data =- %d",self.dataSource.count);
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
     return self.dataSource.count;
 }
 
 //行数
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
     return [self.dataSource[component] count];
 }
 
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
     return 45;
 }
 
 //选中之后执行方法
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     //更新组件
-    for (int i = component; i < self.dataSource.count ; i ++) {
+    for (int i = (int)component; i < self.dataSource.count ; i ++) {
         
         for (int j = i + 1; j < self.dataSource.count ; j ++) {
             
@@ -88,7 +86,7 @@
     
 }
 
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     
     UILabel *contentLabel = view ? (UILabel *) view : [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_BOUND_WIDTH, 20.0f)];
     contentLabel.textAlignment = NSTextAlignmentCenter;
@@ -193,21 +191,71 @@
  */
 
 - (void)reloadData {
+
     
-    //TODO:测试
-    self.pickerViewType = PickerViewTypeNormal;
-    
-    switch (self.pickerViewType) {
+    switch (self.popUpPickerViewType) {
         case PickerViewTypeDate:{
             [self.backGroundView addSubview:self.datePicker];
+            
+            switch (self.datePickerViewMode) {
+                case PickerViewDateModeDateOnly:
+                    self.datePicker.datePickerMode = UIDatePickerModeDate;
+                    break;
+                case PickerViewDateModeDateAndTime:
+                    self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+                    break;
+                case PickerViewDateModeTime:
+                    self.datePicker.datePickerMode = UIDatePickerModeTime;
+                    break;
+                case PickerViewDateModeCountDownTimer:
+                    self.datePicker.datePickerMode = UIDatePickerModeCountDownTimer;
+                    break;
+                default:
+                    //默认(e.g. November | 15 | 2007)
+                    self.datePicker.datePickerMode = UIDatePickerModeDate;
+                    break;
+            }
+            
         }
             break;
         case PickerViewTypeAddress:{
             [self.backGroundView addSubview:self.addressPickerView];
+            
+            [self.normalPickerView reloadAllComponents];
         }
             break;
         case PickerViewTypeNormal:{
+            
             [self.backGroundView addSubview:self.normalPickerView];
+            
+            NSMutableArray *normalArray = [[NSMutableArray alloc] init];
+            
+            switch (self.normalPickerViewType) {
+                case PickerViewNormalTypeOne:
+                    break;
+                case PickerViewNormalTypeTwo:
+                    break;
+                case PickerViewNormalTypeThree:
+                    break;
+                case PickerViewNormalTypeFour:
+                    break;
+                default:
+                    break;
+            }
+            
+            if (self.dataSource.count < self.normalPickerViewType) {
+                
+                NSString *assertRes = [NSString stringWithFormat:@"PickerViewNormalTypeFour 数据源至少有%ld个子数组",(long)self.normalPickerViewType];
+                NSAssert(0, assertRes);
+            }
+            
+            for (int i = 0; i < self.normalPickerViewType; i ++) {
+                [normalArray addObject:self.dataSource[i]];
+            }
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:normalArray];
+            
+            [self.normalPickerView reloadAllComponents];
         }
             break;
         case PickerViewTypeNone:{
@@ -218,7 +266,7 @@
             break;
     }
     
-    //[self.normalPickerView reloadAllComponents];
+    
 }
 
 #pragma mark event response
@@ -294,6 +342,7 @@
         _datePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _datePicker.datePickerMode   = UIDatePickerModeDate;
         _datePicker.locale           = _locale;
+        _datePicker.date             = [NSDate date];
         
     }
     return _datePicker;
