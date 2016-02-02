@@ -159,13 +159,13 @@
      */
     
     self.dataSource = [[NSMutableArray alloc] initWithObjects:
-                       @[@"ModeDateAndTime",@"DateAndTime_Content",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"ModeDateOnly",@"ModeDateOnly_Content",@"",@(UITableViewCellUnitTypeNone)],
-                       @[@"ModeDateTimeOnly",@"ModeDateTimeOnly_Content",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"ModeDateCountDownTimer",@"ModeDateCountDownTimer_Content",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"Normal_One",@"Normal_One",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"Normal_Two",@"Normal_Two",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"Normal_Three",@"Normal_Three",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"DateAndTime",@"DateAndTime_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"DateOnly",@"DateOnly_Content",@"",@(UITableViewCellUnitTypeNone)],
+                       @[@"DateTimeOnly",@"DateTimeOnly_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"DateCountDownTimer",@"DateCountDownTimer_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_One",@"Normal_One",@"钱元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_Two",@"Normal_Two",@"个",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_Three",@"Normal_Three",@"栋",@(UITableViewCellUnitTypeHave)],
                        @[@"Normal_Four",@"Normal_Four",@"元",@(UITableViewCellUnitTypeHave)],nil];
     
 }
