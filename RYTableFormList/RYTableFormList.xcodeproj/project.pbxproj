@@ -37,7 +37,6 @@
 		98BE8CE61C4CB9EE000D7477 /* TraditionTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CD81C4CB9EE000D7477 /* TraditionTextFieldTableViewCell.m */; };
 		98BE8CE71C4CB9EE000D7477 /* TraditionTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CDA1C4CB9EE000D7477 /* TraditionTextTableViewCell.m */; };
 		98BE8CE81C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CDC1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m */; };
-		98BE8CE91C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CDE1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m */; };
 		98BE8CEE1C4CBB4D000D7477 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CED1C4CBB4D000D7477 /* ExampleViewController.m */; };
 		98D34F231C5F55AB0053FE00 /* NSObject+isValidValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D34F221C5F55AB0053FE00 /* NSObject+isValidValue.m */; };
 /* End PBXBuildFile section */
@@ -114,8 +113,6 @@
 		98BE8CDA1C4CB9EE000D7477 /* TraditionTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextTableViewCell.m; sourceTree = "<group>"; };
 		98BE8CDB1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextViewTableViewCell.h; sourceTree = "<group>"; };
 		98BE8CDC1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextViewTableViewCell.m; sourceTree = "<group>"; };
-		98BE8CDD1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionValuesPickerTableViewCell.h; sourceTree = "<group>"; };
-		98BE8CDE1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionValuesPickerTableViewCell.m; sourceTree = "<group>"; };
 		98BE8CEA1C4CBA26000D7477 /* FormListHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormListHeader.h; sourceTree = "<group>"; };
 		98BE8CEB1C4CBA26000D7477 /* RYTableViewCellHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCellHeader.h; sourceTree = "<group>"; };
 		98BE8CEC1C4CBB4D000D7477 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
@@ -323,8 +320,6 @@
 				98BE8CDA1C4CB9EE000D7477 /* TraditionTextTableViewCell.m */,
 				98BE8CDB1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.h */,
 				98BE8CDC1C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m */,
-				98BE8CDD1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.h */,
-				98BE8CDE1C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -429,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98BE8CE91C4CB9EE000D7477 /* TraditionValuesPickerTableViewCell.m in Sources */,
 				98BE8CE41C4CB9EE000D7477 /* TraditionSliderTableViewCell.m in Sources */,
 				985FAAA81C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m in Sources */,
 				98BE8CE31C4CB9EE000D7477 /* TraditionImageTableViewCell.m in Sources */,
