@@ -12,4 +12,6 @@
 //其他自定义视图
 @interface TraditionCustomerTableViewCell : RYTableViewCell
 
+
+
 @end
