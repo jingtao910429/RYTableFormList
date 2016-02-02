@@ -10,7 +10,7 @@
 #import "ExampleViewController.h"
 
 /**
- *  /////
+ *  ///
  */
 @interface AppDelegate ()
 
