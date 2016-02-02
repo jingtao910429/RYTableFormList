@@ -45,7 +45,13 @@
 
 - (void)reloadData {
     
-    CGSize size = [self.itemName sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:15]};
+    
+    CGSize size = [self.itemName boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+    
+    //方法废弃DEPRECATED
+    //CGSize size = [self.itemName sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    
     self.nameLabel.frame = CGRectMake(LEFT_SPACE, 0, size.width > max_width ? max_width : size.width, self.frame.size.height);
     
     self.nameLabel.text = self.itemName;

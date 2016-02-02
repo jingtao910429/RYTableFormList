@@ -33,6 +33,7 @@
     
     [self configUI];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,92 +47,133 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (8 == indexPath.row || 9 == indexPath.row) {
+        
+        return 150.0f;
+    }
     return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TraditionPickersTableViewCell *traditionPickersTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
-    
-    if (!traditionPickersTableViewCell) {
-        traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
+
+    if (8 == indexPath.row || 9 == indexPath.row) {
+        
+        TraditionTextViewTableViewCell *traditionTextViewTableViewCell = [TraditionTextViewTableViewCell initCellWithTableView:tableView];
+        
+        if (8 == indexPath.row) {
+            
+            traditionTextViewTableViewCell.titleLabel.text = @"备注";
+            
+        }else{
+            
+            traditionTextViewTableViewCell.titleLabel.text = @"评价如下：";
+            //可设置颜色
+            traditionTextViewTableViewCell.titleView.backgroundColor = [UIColor whiteColor];
+            //可设置显示不显示
+            traditionTextViewTableViewCell.redImgBtn.backgroundColor = [UIColor redColor];
+            //可设置显示不显示
+            traditionTextViewTableViewCell.tipBtn.backgroundColor = [UIColor purpleColor];
+            [traditionTextViewTableViewCell.tipBtn addTarget:self action:@selector(TipRemarkAction) forControlEvents:UIControlEventTouchUpInside];
+        }
+        
+        traditionTextViewTableViewCell.inputTV.text = @"请填写";
+        
+        traditionTextViewTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return traditionTextViewTableViewCell;
+        
+    }else{
+        
+        TraditionPickersTableViewCell *traditionPickersTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
+        
+        if (!traditionPickersTableViewCell) {
+            traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
+        }
+        
+        NSArray *valueArray = self.dataSource[indexPath.row];
+        
+        traditionPickersTableViewCell.itemName    = valueArray[0];
+        traditionPickersTableViewCell.content     = valueArray[1];
+        traditionPickersTableViewCell.unitContent = valueArray[2];
+        traditionPickersTableViewCell.unitType    = [valueArray[3] integerValue];
+        [traditionPickersTableViewCell reloadData];
+        
+        return traditionPickersTableViewCell;
     }
-    
-    NSArray *valueArray = self.dataSource[indexPath.row];
-    
-    traditionPickersTableViewCell.itemName    = valueArray[0];
-    traditionPickersTableViewCell.content     = valueArray[1];
-    traditionPickersTableViewCell.unitContent = valueArray[2];
-    traditionPickersTableViewCell.unitType    = [valueArray[3] integerValue];
-    [traditionPickersTableViewCell reloadData];
-    
-    return traditionPickersTableViewCell;
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    PickerView *pickerView = [[UIFactory shareInstance] pickerView];
-    pickerView.pickerViewDelegte = self;
     
-    if (0 == indexPath.row) {
         
-        //测试日期控件，类型为 UIDatePickerModeDateAndTime
-        pickerView.popUpPickerViewType  = PickerViewTypeDate;
-        //如果是日期控件，需要设置控件日期类型
-        pickerView.datePickerViewMode   = PickerViewDateModeDateAndTime;
+    if (8 == indexPath.row || 9 == indexPath.row) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }else {
         
-    }else if (1 == indexPath.row){
+        PickerView *pickerView = [[UIFactory shareInstance] pickerView];
+        pickerView.pickerViewDelegte = self;
         
-        //UIDatePickerModeDate
-        pickerView.popUpPickerViewType  = PickerViewTypeDate;
-        pickerView.datePickerViewMode   = PickerViewDateModeDateOnly;
-        
-    }else if (2 == indexPath.row) {
-        
-        //UIDatePickerModeTime
-        pickerView.popUpPickerViewType  = PickerViewTypeDate;
-        pickerView.datePickerViewMode   = PickerViewDateModeTime;
-        
-    }else if (3 == indexPath.row) {
-        
-        //UIDatePickerModeDate
-        pickerView.popUpPickerViewType  = PickerViewTypeDate;
-        pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
-        
-        
-    }else if (indexPath.row >= 4 && indexPath.row <=7) {
-        
-        switch (indexPath.row) {
-            case 4:
-                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
-                break;
-            case 5:
-                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
-                break;
-            case 6:
-                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
-                break;
-            case 7:
-                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
-                break;
-            default:
-                break;
+        if (0 == indexPath.row) {
+            
+            //测试日期控件，类型为 UIDatePickerModeDateAndTime
+            pickerView.popUpPickerViewType  = PickerViewTypeDate;
+            //如果是日期控件，需要设置控件日期类型
+            pickerView.datePickerViewMode   = PickerViewDateModeDateAndTime;
+            
+        }else if (1 == indexPath.row){
+            
+            //UIDatePickerModeDate
+            pickerView.popUpPickerViewType  = PickerViewTypeDate;
+            pickerView.datePickerViewMode   = PickerViewDateModeDateOnly;
+            
+        }else if (2 == indexPath.row) {
+            
+            //UIDatePickerModeTime
+            pickerView.popUpPickerViewType  = PickerViewTypeDate;
+            pickerView.datePickerViewMode   = PickerViewDateModeTime;
+            
+        }else if (3 == indexPath.row) {
+            
+            //UIDatePickerModeDate
+            pickerView.popUpPickerViewType  = PickerViewTypeDate;
+            pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
+            
+            
+        }else if (indexPath.row >= 4 && indexPath.row <=7) {
+            
+            switch (indexPath.row) {
+                case 4:
+                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
+                    break;
+                case 5:
+                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
+                    break;
+                case 6:
+                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                    break;
+                case 7:
+                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                    break;
+                default:
+                    break;
+            }
+            
+            
+            pickerView.popUpPickerViewType  = PickerViewTypeNormal;
+            pickerView.normalPickerViewType = pickerView.dataSource.count;
+            
+            
         }
         
+        [self.view addSubview:pickerView];
         
-        pickerView.popUpPickerViewType  = PickerViewTypeNormal;
-        pickerView.normalPickerViewType = pickerView.dataSource.count;
-        
-        
+        [pickerView animationStart];
+        [pickerView reloadData];
     }
-
-    [self.view addSubview:pickerView];
-    
-    [pickerView animationStart];
-    [pickerView reloadData];
-    
-    
 }
 
 #pragma mark - PickerViewDelegte
@@ -147,6 +189,12 @@
 }
 
 #pragma mark - event response
+
+- (void)TipRemarkAction{
+    
+    NSLog(@"或弹出提示信息");
+}
+
 #pragma mark - private method
 
 
@@ -166,7 +214,9 @@
                        @[@"Normal_One",@"Normal_One",@"钱元",@(UITableViewCellUnitTypeHave)],
                        @[@"Normal_Two",@"Normal_Two",@"个",@(UITableViewCellUnitTypeHave)],
                        @[@"Normal_Three",@"Normal_Three",@"栋",@(UITableViewCellUnitTypeHave)],
-                       @[@"Normal_Four",@"Normal_Four",@"元",@(UITableViewCellUnitTypeHave)],nil];
+                       @[@"Normal_Four",@"Normal_Four",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"备注",@"content",@"",@(UITableViewCellUnitTypeNone)],
+                       @[@"评价如下：",@"请填写",@"",@(UITableViewCellUnitTypeNone)],nil];
     
 }
 
@@ -181,7 +231,7 @@
 - (UITableView *)contentTableView {
     
     if (!_contentTableView) {
-        _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_BOUND_WIDTH, SCREEN_BOUND_HEIGHT) style:UITableViewStylePlain];
+        _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_BOUND_WIDTH, SCREEN_BOUND_HEIGHT) style:UITableViewStyleGrouped];
         _contentTableView.delegate = self;
         _contentTableView.dataSource = self;
     }
