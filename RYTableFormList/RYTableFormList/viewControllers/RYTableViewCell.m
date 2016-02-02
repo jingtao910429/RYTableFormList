@@ -14,8 +14,6 @@
 //static const NSString *className = @"NameLabel";
 //const NSString *baseNameLabel = @"NameLabel";
 
-const NSInteger max_width = 125;
-
 @interface RYTableViewCell ()
 
 @end

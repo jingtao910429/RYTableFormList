@@ -11,7 +11,11 @@
 #import "UIFactory.h"
 #import "PickerView+PickerViewMethod.h"
 
+const NSInteger left_max_width = 145;
+
 @interface TraditionPickersTableViewCell ()
+
+@property (nonatomic, assign) CGRect contentLabelFrame;
 
 @end
 
@@ -21,13 +25,22 @@
     
     if ([super initWithReuseIdentifier:@"TraditionDatePickerElement"]){
         
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [self initData];
         [self.contentView addSubview:self.contentLabel];
         [self.contentView addSubview:self.unitLabel];
         
     }
     return self;
+}
+
+#pragma mark private method
+
+- (void)initData {
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    self.contentLabelFrame = CGRectMake (LEFT_SPACE + GAP + left_max_width, 0, SCREEN_BOUND_WIDTH - (LEFT_SPACE + GAP + RIGHT_SPACE) - BETWEEN_CONTENTLABEL_UNITLABEL_SPACE - left_max_width, self.frame.size.height);
+    
 }
 
 #pragma mark 数据刷新
@@ -48,12 +61,12 @@
         
         self.unitLabelAttributesDict = nil;
         
-        _contentLabel.frame = CGRectMake (LEFT_SPACE + GAP, 0, SCREEN_BOUND_WIDTH - (LEFT_SPACE + GAP + RIGHT_SPACE) - BETWEEN_CONTENTLABEL_UNITLABEL_SPACE, self.frame.size.height);
+        _contentLabel.frame = _contentLabelFrame;
         
     }else {
         
         //判断状态改变frame
-        if (_contentLabel.frame.origin.x == LEFT_SPACE + GAP) {
+        if (_contentLabel.frame.origin.x == (LEFT_SPACE + GAP + left_max_width)) {
             CGRect frame = _contentLabel.frame;
             frame.origin.x -= (SINGLE_LETTER_WIDTH * ((NSString *)self.unitContent).length + 5);
             _contentLabel.frame = frame;
@@ -86,8 +99,7 @@
     
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
-        _contentLabel.frame = CGRectMake (LEFT_SPACE + GAP, 0, SCREEN_BOUND_WIDTH - (LEFT_SPACE + GAP + RIGHT_SPACE) - BETWEEN_CONTENTLABEL_UNITLABEL_SPACE, self.frame.size.height);
-        _contentLabel.numberOfLines = 2;
+        _contentLabel.frame = _contentLabelFrame;
     }
     return _contentLabel;
 }

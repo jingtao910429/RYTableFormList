@@ -11,6 +11,8 @@
 #import "PickerView.h"
 #import "ReloadContentProtocol.h"
 
+const NSInteger max_width = 125;
+
 @interface RYTableViewCell : UITableViewCell <ReloadContentProtocol,PickerViewDelegte>
 
 //条目名称
