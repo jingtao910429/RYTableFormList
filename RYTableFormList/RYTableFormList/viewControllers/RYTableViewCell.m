@@ -14,10 +14,9 @@
 //static const NSString *className = @"NameLabel";
 //const NSString *baseNameLabel = @"NameLabel";
 
-@interface RYTableViewCell ()
+const NSInteger max_width = 125;
 
-//条目名称
-@property (nonatomic, strong) UILabel *nameLabel;
+@interface RYTableViewCell ()
 
 @end
 
@@ -48,10 +47,10 @@
 
 - (void)reloadData {
     
-    CGSize size = [self.itemContent sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
-    self.nameLabel.frame = CGRectMake(LEFT_SPACE, 0, size.width, self.frame.size.height);
+    CGSize size = [self.itemName sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    self.nameLabel.frame = CGRectMake(LEFT_SPACE, 0, size.width > max_width ? max_width : size.width, self.frame.size.height);
     
-    self.nameLabel.text = self.itemContent;
+    self.nameLabel.text = self.itemName;
 }
 
 - (void)reloadUI {

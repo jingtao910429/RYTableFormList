@@ -15,24 +15,24 @@
 
 @interface PickerView () <UIPickerViewDataSource,UIPickerViewDelegate,RYAnimationAdaptorDelegate,UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) NSDateFormatter *formatter;
-@property (nonatomic, strong) NSLocale        *locale;
+@property (nonatomic, strong) NSDateFormatter                   *formatter;
+@property (nonatomic, strong) NSLocale                          *locale;
 
-@property (nonatomic, strong) UIView          *lineView;
-@property (nonatomic, strong) UIButton        *confirmButton;
+@property (nonatomic, strong) UIView                            *lineView;
+@property (nonatomic, strong) UIButton                          *confirmButton;
 
 //日期控件
-@property (nonatomic, strong) UIDatePicker    *datePicker;
+@property (nonatomic, strong) UIDatePicker                      *datePicker;
 //省市县控件 （同normal，一般为三级）
-@property (nonatomic, strong) UIPickerView    *addressPickerView;
+@property (nonatomic, strong) UIPickerView                      *addressPickerView;
 //普通控件   （一般为一级）
-@property (nonatomic, strong) UIPickerView    *normalPickerView;
-@property (nonatomic, strong) UIView          *backGroundView;
+@property (nonatomic, strong) UIPickerView                      *normalPickerView;
+@property (nonatomic, strong) UIView                            *backGroundView;
 
 //动画相关
 @property (nonatomic, strong) RYBackGroundColorAnimationAdaptor *backGroundColorAnimationAdaptor;
 @property (nonatomic, strong) RYMoveAnimationAdaptor            *moveAnimationAdaptor;
-@property (nonatomic, assign) BOOL            animationOver;
+@property (nonatomic, assign) BOOL                              animationOver;
 
 @end
 
@@ -191,10 +191,12 @@
  */
 
 - (void)reloadData {
-
+    
+    [self clearSubviews];
     
     switch (self.popUpPickerViewType) {
         case PickerViewTypeDate:{
+            
             [self.backGroundView addSubview:self.datePicker];
             
             switch (self.datePickerViewMode) {
@@ -219,6 +221,7 @@
         }
             break;
         case PickerViewTypeAddress:{
+            
             [self.backGroundView addSubview:self.addressPickerView];
             
             [self.normalPickerView reloadAllComponents];
@@ -266,6 +269,20 @@
             break;
     }
     
+    
+}
+
+/**
+ *
+ *  清除子视图
+ *
+ */
+
+- (void)clearSubviews {
+    
+    [self.datePicker        removeFromSuperview];
+    [self.addressPickerView removeFromSuperview];
+    [self.normalPickerView  removeFromSuperview];
     
 }
 

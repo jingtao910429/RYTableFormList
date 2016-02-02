@@ -87,6 +87,7 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.frame = CGRectMake (LEFT_SPACE + GAP, 0, SCREEN_BOUND_WIDTH - (LEFT_SPACE + GAP + RIGHT_SPACE) - BETWEEN_CONTENTLABEL_UNITLABEL_SPACE, self.frame.size.height);
+        _contentLabel.numberOfLines = 2;
     }
     return _contentLabel;
 }

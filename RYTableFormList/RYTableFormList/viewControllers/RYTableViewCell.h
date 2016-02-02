@@ -13,6 +13,9 @@
 
 @interface RYTableViewCell : UITableViewCell <ReloadContentProtocol,PickerViewDelegte>
 
+//条目名称
+@property (nonatomic, strong) UILabel *nameLabel;
+
 //属性控制
 @property (nonatomic, copy)   NSDictionary *contentLabelAttributesDict;
 @property (nonatomic, copy)   NSDictionary *unitLabelAttributesDict;
@@ -20,7 +23,7 @@
 //索引值（section * 1000 + row）
 @property (nonatomic, assign) NSInteger index;
 
-@property (nonatomic, copy)   NSString *itemContent;
+@property (nonatomic, copy)   NSString *itemName;
 @property (nonatomic, copy)   NSString *content;
 @property (nonatomic, copy)   NSString *unitContent;
 @property (nonatomic, assign) UITableViewCellUnitType unitType;

@@ -15,7 +15,9 @@
 
 @interface ExampleViewController () <UITableViewDelegate,UITableViewDataSource,PickerViewDelegte>
 
-@property (nonatomic, strong) UITableView *contentTableView;
+@property (nonatomic, strong) UITableView     *contentTableView;
+
+@property (nonatomic, strong) NSMutableArray  *dataSource;
 
 @end
 
@@ -24,9 +26,13 @@
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    [self.view addSubview:self.contentTableView];
+    [self configData];
+    
+    [self configUI];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +42,7 @@
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.dataSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -51,39 +57,12 @@
         traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
     }
     
-    NSString *content     = @"";
-    NSString *unitContent = @"";
-    NSString *itemContent = @"";
-    UITableViewCellUnitType unitType = UITableViewCellUnitTypeHave;
+    NSArray *valueArray = self.dataSource[indexPath.row];
     
-    if (0 == indexPath.row) {
-        
-        //unit show
-        content     = @"单位";
-        unitContent = @"元";
-        itemContent = @"ModeDateAndTime";
-        unitType    = UITableViewCellUnitTypeHave;
-        
-    }else if (1 == indexPath.row){
-        
-        //unit hidden
-        content     = @"无单位";
-        itemContent = @"ModeDateOnly";
-        unitType    = UITableViewCellUnitTypeNone;
-        
-    }else {
-        
-        content     = @"单位";
-        unitContent = @"元";
-        itemContent = @"ModeDateAndTime";
-        unitType    = UITableViewCellUnitTypeHave;
-        
-    }
-    
-    traditionPickersTableViewCell.content     = content;
-    traditionPickersTableViewCell.unitContent = unitContent;
-    traditionPickersTableViewCell.itemContent = itemContent;
-    traditionPickersTableViewCell.unitType    = unitType;
+    traditionPickersTableViewCell.itemName    = valueArray[0];
+    traditionPickersTableViewCell.content     = valueArray[1];
+    traditionPickersTableViewCell.unitContent = valueArray[2];
+    traditionPickersTableViewCell.unitType    = [valueArray[3] integerValue];
     [traditionPickersTableViewCell reloadData];
     
     return traditionPickersTableViewCell;
@@ -97,31 +76,45 @@
     
     if (0 == indexPath.row) {
         
-        //TODO:测试
+        //测试日期控件，类型为 UIDatePickerModeDateAndTime
         pickerView.popUpPickerViewType  = PickerViewTypeDate;
         //如果是日期控件，需要设置控件日期类型
         pickerView.datePickerViewMode   = PickerViewDateModeDateAndTime;
         
     }else if (1 == indexPath.row){
         
-        //TODO:测试
+        //UIDatePickerModeDate
         pickerView.popUpPickerViewType  = PickerViewTypeDate;
-        //如果是日期控件，需要设置控件日期类型
         pickerView.datePickerViewMode   = PickerViewDateModeDateOnly;
         
     }else if (2 == indexPath.row) {
+        
+        //UIDatePickerModeTime
+        pickerView.popUpPickerViewType  = PickerViewTypeDate;
+        pickerView.datePickerViewMode   = PickerViewDateModeTime;
+        
+    }else if (3 == indexPath.row) {
+        
+        //UIDatePickerModeDate
+        pickerView.popUpPickerViewType  = PickerViewTypeDate;
+        pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
+        
+        
+    }else if (4 == indexPath.row) {
+        
         
         pickerView.popUpPickerViewType  = PickerViewTypeNormal;
         pickerView.normalPickerViewType = PickerViewNormalTypeOne;
         
         pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
         
-    }else if (3 == indexPath.row) {
+    }else if (5 == indexPath.row) {
         
         pickerView.popUpPickerViewType  = PickerViewTypeNormal;
         pickerView.normalPickerViewType = PickerViewNormalTypeTwo;
         
         pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
+        
     }
 
     [self.view addSubview:pickerView];
@@ -147,6 +140,30 @@
 
 #pragma mark - event response
 #pragma mark - private method
+
+
+- (void)configData {
+    
+    /**
+     *    数据源
+     *
+     *    内部数组类型，@[@"条目名称（keyName）",@"条目内容（content）",@"单位（unit）",@"单位类型（有/无）"]
+     */
+    
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:
+                       @[@"ModeDateAndTime",@"DateAndTime_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"ModeDateOnly",@"ModeDateOnly_Content",@"",@(UITableViewCellUnitTypeNone)],
+                       @[@"ModeDateTimeOnly",@"ModeDateTimeOnly_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"ModeDateCountDownTimer",@"ModeDateCountDownTimer_Content",@"元",@(UITableViewCellUnitTypeHave)],nil];
+    
+}
+
+- (void)configUI {
+    
+    [self.view addSubview:self.contentTableView];
+    
+}
+
 #pragma mark - getters and setters
 
 - (UITableView *)contentTableView {
