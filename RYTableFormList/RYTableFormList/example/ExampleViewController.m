@@ -100,27 +100,35 @@
         pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
         
         
-    }else if (4 == indexPath.row) {
+    }else if (indexPath.row >= 4 && indexPath.row <=7) {
+        
+        switch (indexPath.row) {
+            case 4:
+                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
+                break;
+            case 5:
+                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
+                break;
+            case 6:
+                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                break;
+            case 7:
+                pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                break;
+            default:
+                break;
+        }
         
         
         pickerView.popUpPickerViewType  = PickerViewTypeNormal;
-        pickerView.normalPickerViewType = PickerViewNormalTypeOne;
+        pickerView.normalPickerViewType = pickerView.dataSource.count;
         
-        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
-        
-    }else if (5 == indexPath.row) {
-        
-        pickerView.popUpPickerViewType  = PickerViewTypeNormal;
-        pickerView.normalPickerViewType = PickerViewNormalTypeTwo;
-        
-        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
         
     }
 
     [self.view addSubview:pickerView];
     
     [pickerView animationStart];
-//    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"],@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"],@[@"1",@"2",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3",@"3"], nil];
     [pickerView reloadData];
     
     
@@ -154,7 +162,11 @@
                        @[@"ModeDateAndTime",@"DateAndTime_Content",@"元",@(UITableViewCellUnitTypeHave)],
                        @[@"ModeDateOnly",@"ModeDateOnly_Content",@"",@(UITableViewCellUnitTypeNone)],
                        @[@"ModeDateTimeOnly",@"ModeDateTimeOnly_Content",@"元",@(UITableViewCellUnitTypeHave)],
-                       @[@"ModeDateCountDownTimer",@"ModeDateCountDownTimer_Content",@"元",@(UITableViewCellUnitTypeHave)],nil];
+                       @[@"ModeDateCountDownTimer",@"ModeDateCountDownTimer_Content",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_One",@"Normal_One",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_Two",@"Normal_Two",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_Three",@"Normal_Three",@"元",@(UITableViewCellUnitTypeHave)],
+                       @[@"Normal_Four",@"Normal_Four",@"元",@(UITableViewCellUnitTypeHave)],nil];
     
 }
 

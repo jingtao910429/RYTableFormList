@@ -10,7 +10,7 @@
 #import "RYTableViewCell.h"
 #import "PickerView.h"
 
-//传统日期空间
+//传统日期控件
 @interface TraditionPickersTableViewCell : RYTableViewCell
 
 @property (nonatomic, strong) UILabel      *contentLabel;
