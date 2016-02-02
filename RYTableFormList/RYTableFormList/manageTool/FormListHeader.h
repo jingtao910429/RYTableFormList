@@ -11,7 +11,6 @@
 
 #import "TraditionPickersTableViewCell.h"
 #import "TraditionAddressPickerTableViewCell.h"
-#import "TraditionValuesPickerTableViewCell.h"
 #import "TraditionTextFieldTableViewCell.h"
 #import "TraditionTextViewTableViewCell.h"
 #import "TraditionTextTableViewCell.h"
