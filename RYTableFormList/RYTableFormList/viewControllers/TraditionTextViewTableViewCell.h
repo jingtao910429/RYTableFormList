@@ -16,6 +16,7 @@
 #import "RYTableViewCell.h"
 
 typedef NS_ENUM(NSUInteger, TableTextViewCellStyle) {
+    TableTextViewCellStyleDefault,//填写详细地址之类的
     TableTextViewCellStyleRemarks,//填写备注信息之类的
     TableTextViewCellStyleComment,//填写评价信息之类的
 };

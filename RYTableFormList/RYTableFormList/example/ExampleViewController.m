@@ -51,6 +51,9 @@
     if (8 == indexPath.row || 9 == indexPath.row) {
         
         return 150.0f;
+    }else if (10 == indexPath.row || 11 == indexPath.row){
+        
+        return 60.0f;
     }
     return 45;
 }
@@ -59,12 +62,24 @@
     
     NSArray *valueArray = self.dataSource[indexPath.row];
 
-    if (8 == indexPath.row || 9 == indexPath.row) {
+   if (8 == indexPath.row || 9 == indexPath.row || 10 == indexPath.row || 11 == indexPath.row) {//TextView之类
         
         TraditionTextViewTableViewCell *traditionTextViewTableViewCell = [TraditionTextViewTableViewCell initCellWithTableView:tableView];
         
         traditionTextViewTableViewCell.itemName    = valueArray[0];
         traditionTextViewTableViewCell.content     = valueArray[1];
+        traditionTextViewTableViewCell.unitContent = valueArray[2];
+        traditionTextViewTableViewCell.unitType    = [valueArray[3] integerValue];
+        
+        if (8 == indexPath.row) {
+            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleRemarks;
+        }else if (9 == indexPath.row){
+            
+            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleComment;
+        }else if (10 == indexPath.row || 11 == indexPath.row){
+            
+            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleDefault;
+        }
         
         [traditionTextViewTableViewCell reloadData];
         
@@ -90,10 +105,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    
         
-    if (8 == indexPath.row || 9 == indexPath.row) {
+    if (8 == indexPath.row || 9 == indexPath.row || 10 == indexPath.row) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }else {
@@ -196,7 +209,9 @@
                        @[@"Normal_Three",@"Normal_Three",@"栋",@(UITableViewCellUnitTypeHave)],
                        @[@"Normal_Four",@"Normal_Four",@"元",@(UITableViewCellUnitTypeHave)],
                        @[@"备注",@"content",@"",@(UITableViewCellUnitTypeNone)],
-                       @[@"评价如下：",@"请填写",@"",@(UITableViewCellUnitTypeNone)],nil];
+                       @[@"评价如下：",@"请填写",@"",@(UITableViewCellUnitTypeNone)],
+                       @[@"详细地址：",@"请填写",@"平方米",@(UITableViewCellUnitTypeHave)],
+                       @[@"公馆号",@"请填写",@"",@(UITableViewCellUnitTypeNone)],nil];
     
 }
 
@@ -211,7 +226,7 @@
 - (UITableView *)contentTableView {
     
     if (!_contentTableView) {
-        _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_BOUND_WIDTH, SCREEN_BOUND_HEIGHT) style:UITableViewStyleGrouped];
+        _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0.0f, SCREEN_BOUND_WIDTH, SCREEN_BOUND_HEIGHT) style:UITableViewStyleGrouped];
         _contentTableView.delegate = self;
         _contentTableView.dataSource = self;
     }
