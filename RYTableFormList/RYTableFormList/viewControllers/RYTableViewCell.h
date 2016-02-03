@@ -11,8 +11,8 @@
 #import "PickerView.h"
 #import "ReloadContentProtocol.h"
 
-//const NSInteger max_width = 125;
 const static NSInteger max_width = 125;
+const static
 
 @interface RYTableViewCell : UITableViewCell <ReloadContentProtocol,PickerViewDelegte>
 
@@ -26,6 +26,7 @@ const static NSInteger max_width = 125;
 //索引值（section * 1000 + row）
 @property (nonatomic, assign) NSInteger index;
 
+//数据源
 @property (nonatomic, copy)   NSString *itemName;
 @property (nonatomic, copy)   NSString *content;
 @property (nonatomic, copy)   NSString *unitContent;

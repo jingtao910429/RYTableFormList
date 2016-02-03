@@ -20,24 +20,16 @@ typedef NS_ENUM(NSUInteger, TableTextViewCellStyle) {
     TableTextViewCellStyleComment,//填写评价信息之类的
 };
 
-//传统TextView
-@interface TraditionTextViewTableViewCell : RYTableViewCell <UITextViewDelegate>
+
+@interface TraditionTextViewTableViewCell : RYTableViewCell
 
 /*
  属性/控件
  */
 @property (nonatomic, assign) TableTextViewCellStyle tableTextViewCellStyle;
 
-@property (nonatomic, strong) UIView       *titleView;
-@property (nonatomic, strong) UIButton     *redImgBtn;
-@property (nonatomic, strong) UILabel      *titleLabel;
-@property (nonatomic, strong) UIView       *labelBotLine;
-@property (nonatomic, strong) UIButton     *tipBtn;
-@property (nonatomic, strong) UITextView   *inputTV;
-
-/*
- 方法
- */
 + (instancetype)initCellWithTableView:(UITableView*)tableView;
+
+- (void)reloadData;
 
 @end
