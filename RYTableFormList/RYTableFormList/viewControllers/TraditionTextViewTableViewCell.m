@@ -37,9 +37,36 @@
     self.labelBotLine.frame  = CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.titleLabel.frame)-0.3f, CGRectGetWidth(self.frame), 0.3f);
     self.tipBtn.frame        = CGRectMake(CGRectGetWidth(self.frame)-imgWH - margin, (labelH-imgWH)/2, imgWH, imgWH);
     self.inputTV.frame       = CGRectMake(0, CGRectGetMaxY(self.titleLabel.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)-CGRectGetHeight(self.titleLabel.frame));
+    
+    
 }
 
 #pragma mark - private method
+
+- (void)loadTableViewCellStyle{
+    
+    switch (self.tableTextViewCellStyle) {
+        case TableTextViewCellStyleRemarks://备注
+        {
+            
+        }
+            break;
+        case TableTextViewCellStyleComment://评价
+        {
+            //可设置颜色
+            self.titleView.backgroundColor = [UIColor whiteColor];
+            //可设置显示不显示
+            self.redImgBtn.backgroundColor = [UIColor redColor];
+            //可设置显示不显示
+            self.tipBtn.backgroundColor = [UIColor purpleColor];
+            [self.tipBtn addTarget:self action:@selector(TipRemarkAction) forControlEvents:UIControlEventTouchUpInside];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 + (instancetype)initCellWithTableView:(UITableView*)tableView{
     
@@ -137,6 +164,13 @@
         }
     }
     
+}
+
+#pragma mark - event response
+
+- (void)TipRemarkAction{
+    
+    NSLog(@"或弹出提示信息");
 }
 
 @end
