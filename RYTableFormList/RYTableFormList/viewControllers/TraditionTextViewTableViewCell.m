@@ -147,78 +147,12 @@
 
 - (void)loadViews{
     
-    [self initTitleView];
-    [self initRedImgBtn];
-    [self initTitleLabel];
-    [self initLabelBotLine];
-    [self initTipBtn];
-    [self initUnitLabel];
-    [self initInputTV];
-}
-
-- (void)initTitleView{
-    
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self addSubview:titleView];
-    self.titleView = titleView;
-}
-
-- (void)initRedImgBtn{
-    
-    UIButton *redImgBtn = [[UIButton alloc] initWithFrame:CGRectZero];
-    [self addSubview:redImgBtn];
-    self.redImgBtn = redImgBtn;
-}
-
-- (void)initTitleLabel{
-    
-    UILabel *titleLabel      = [[UILabel alloc] initWithFrame:CGRectZero];
-    titleLabel.textAlignment = NSTextAlignmentLeft;
-    titleLabel.textColor     = [UIColor blackColor];
-    titleLabel.font          = [UIFont systemFontOfSize:16.0f];
-    titleLabel.numberOfLines = 2;
-    [self addSubview:titleLabel];
-    self.titleLabel = titleLabel;
-}
-
-- (void)initLabelBotLine{
-    
-    UIView *labelBotLine         = [[UIView alloc] initWithFrame:CGRectZero];
-    labelBotLine.backgroundColor = [UIColor lightGrayColor];
-    labelBotLine.alpha           = 0.6f;
-    [self addSubview:labelBotLine];
-    self.labelBotLine            = labelBotLine;
-}
-
-- (void)initTipBtn{
-    
-    UIButton *tipBtn    = [[UIButton alloc] initWithFrame:CGRectZero];
-    [self addSubview:tipBtn];
-    self.tipBtn         = tipBtn;
-}
-
-- (void)initUnitLabel{
-    
-    UILabel *unitLabel    = [[UILabel alloc] initWithFrame:CGRectZero];
-    unitLabel.textAlignment = NSTextAlignmentRight;
-    unitLabel.textColor   = [UIColor blackColor];
-    unitLabel.font        = [UIFont systemFontOfSize:14.0f];
-    [self addSubview:unitLabel];
-    self.unitLabel        = unitLabel;
-}
-
-- (void)initInputTV{
-    
-    UITextView *inputTV     = [[UITextView alloc] initWithFrame:CGRectZero];
-    inputTV.textAlignment   = NSTextAlignmentLeft;
-    inputTV.textColor       = [UIColor lightGrayColor];
-    inputTV.font            = [UIFont systemFontOfSize:16.0f];
-    inputTV.backgroundColor = [UIColor whiteColor];
-    inputTV.delegate        = self;
-    //padding
-    inputTV.textContainerInset = UIEdgeInsetsMake(5.0f, 15.0f, 0.0f, 15.0f);
-    [self addSubview:inputTV];
-    self.inputTV          = inputTV;
+    [self addSubview:self.titleView];
+    [self addSubview:self.redImgBtn];
+    [self addSubview:self.titleLabel];
+    [self addSubview:self.labelBotLine];
+    [self addSubview:self.tipBtn];
+    [self addSubview:self.inputTV];
 }
 
 #pragma mark - UITextViewDelegate
@@ -247,6 +181,63 @@
 - (void)TipRemarkAction{
     
     NSLog(@"或弹出提示信息");
+}
+
+#pragma mark getters & setters 
+
+- (UIView *)titleView {
+    if (!_titleView) {
+        _titleView = [[UIView alloc] initWithFrame:CGRectZero];
+    }
+    return _titleView;
+}
+
+- (UIButton *)redImgBtn {
+    if (!_redImgBtn) {
+        _redImgBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+    }
+    return _redImgBtn;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel               = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.textAlignment = NSTextAlignmentLeft;
+        _titleLabel.textColor     = [UIColor blackColor];
+        _titleLabel.font          = [UIFont systemFontOfSize:16.0f];
+        _titleLabel.numberOfLines = 2;
+        
+    }
+    return _titleLabel;
+}
+
+- (UIView *)labelBotLine {
+    if (!_labelBotLine) {
+        _labelBotLine                 = [[UIView alloc] initWithFrame:CGRectZero];
+        _labelBotLine.backgroundColor = [UIColor lightGrayColor];
+        _labelBotLine.alpha           = 0.6f;
+    }
+    return _labelBotLine;
+}
+
+- (UIButton *)tipBtn {
+    if (!_tipBtn) {
+        _tipBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+    }
+    return _tipBtn;
+}
+
+- (UITextView *)inputTV {
+    if (!_inputTV) {
+        _inputTV                 = [[UITextView alloc] initWithFrame:CGRectZero];
+        _inputTV.textAlignment   = NSTextAlignmentLeft;
+        _inputTV.textColor       = [UIColor lightGrayColor];
+        _inputTV.font            = [UIFont systemFontOfSize:16.0f];
+        _inputTV.backgroundColor = [UIColor whiteColor];
+        _inputTV.delegate        = self;
+        _inputTV.textContainerInset = UIEdgeInsetsMake(5.0f, 15.0f, 0.0f, 15.0f);
+    }
+    return _inputTV;
 }
 
 @end
