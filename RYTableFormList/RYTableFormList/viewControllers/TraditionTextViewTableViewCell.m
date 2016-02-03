@@ -8,6 +8,17 @@
 
 #import "TraditionTextViewTableViewCell.h"
 
+@interface TraditionTextViewTableViewCell () <UITextViewDelegate>
+
+@property (nonatomic, strong) UIView       *titleView;
+@property (nonatomic, strong) UIButton     *redImgBtn;
+@property (nonatomic, strong) UILabel      *titleLabel;
+@property (nonatomic, strong) UIView       *labelBotLine;
+@property (nonatomic, strong) UIButton     *tipBtn;
+@property (nonatomic, strong) UITextView   *inputTV;
+
+@end
+
 @implementation TraditionTextViewTableViewCell
 
 #pragma mark - life cycle
@@ -31,7 +42,7 @@
     CGFloat imgWH     = 20.0f;
     CGFloat labelH    = 40.0f;
     
-    self.titleView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.frame), labelH);
+    self.titleView.frame     = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.frame), labelH);
     self.redImgBtn.frame     = CGRectMake((margin-redImgWH)/2, (labelH-redImgWH)/2, redImgWH, redImgWH);
     self.titleLabel.frame    = CGRectMake(margin, 0.0f, CGRectGetWidth(self.frame)/2, labelH);
     self.labelBotLine.frame  = CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.titleLabel.frame)-0.3f, CGRectGetWidth(self.frame), 0.3f);
@@ -43,7 +54,7 @@
 
 #pragma mark - private method
 
-- (void)loadTableViewCellStyle{
+- (void)reloadData{
     
     switch (self.tableTextViewCellStyle) {
         case TableTextViewCellStyleRemarks://备注
@@ -70,13 +81,14 @@
 
 + (instancetype)initCellWithTableView:(UITableView*)tableView{
     
-    static NSString *cellId              = @"CellId";
+    static NSString *cellId              = @"TraditionTextViewElement";
     TraditionTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[TraditionTextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = tableView.backgroundColor;
+    
     return cell;
 }
 

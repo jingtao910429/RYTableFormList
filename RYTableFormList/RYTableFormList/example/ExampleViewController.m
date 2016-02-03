@@ -66,9 +66,7 @@
         traditionTextViewTableViewCell.itemName    = valueArray[0];
         traditionTextViewTableViewCell.content     = valueArray[1];
         
-        traditionTextViewTableViewCell.inputTV.text = @"请填写";
-        
-        traditionTextViewTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [traditionTextViewTableViewCell reloadData];
         
         return traditionTextViewTableViewCell;
         

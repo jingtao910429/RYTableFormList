@@ -17,6 +17,9 @@ const NSInteger left_max_width = 145;
 
 @property (nonatomic, assign) CGRect contentLabelFrame;
 
+@property (nonatomic, strong) UILabel      *contentLabel;
+@property (nonatomic, strong) UILabel      *unitLabel;
+
 @end
 
 @implementation TraditionPickersTableViewCell

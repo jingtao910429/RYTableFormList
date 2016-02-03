@@ -13,9 +13,6 @@
 //传统日期控件
 @interface TraditionPickersTableViewCell : RYTableViewCell
 
-@property (nonatomic, strong) UILabel      *contentLabel;
-@property (nonatomic, strong) UILabel      *unitLabel;
-
 - (void)reloadData;
 
 @end
