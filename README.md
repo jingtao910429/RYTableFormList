@@ -1,6 +1,6 @@
 # RYTableFormList
 表单类处理逻辑（UI及数据处理）
-TraditionTextViewTableViewCell 设置了cell中放置不同位置的 TextView：
+1、类型TraditionTextViewTableViewCell 设置了cell中放置不同位置的 TextView：
 （1）TableTextViewCellStyleDefault 普通的样式，例如填写超过一行的，例如详细地址信息、且有单位的、无单位的。
 
 （2）TableTextViewCellStyleRemarks，例如备注，标题与内容不在同一行，且背景颜色不同的样式。
