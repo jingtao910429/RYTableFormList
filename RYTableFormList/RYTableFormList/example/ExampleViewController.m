@@ -57,26 +57,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSArray *valueArray = self.dataSource[indexPath.row];
 
     if (8 == indexPath.row || 9 == indexPath.row) {
         
         TraditionTextViewTableViewCell *traditionTextViewTableViewCell = [TraditionTextViewTableViewCell initCellWithTableView:tableView];
         
-        if (8 == indexPath.row) {
-            
-            traditionTextViewTableViewCell.titleLabel.text = @"备注";
-            
-        }else{
-            
-            traditionTextViewTableViewCell.titleLabel.text = @"评价如下：";
-            //可设置颜色
-            traditionTextViewTableViewCell.titleView.backgroundColor = [UIColor whiteColor];
-            //可设置显示不显示
-            traditionTextViewTableViewCell.redImgBtn.backgroundColor = [UIColor redColor];
-            //可设置显示不显示
-            traditionTextViewTableViewCell.tipBtn.backgroundColor = [UIColor purpleColor];
-            [traditionTextViewTableViewCell.tipBtn addTarget:self action:@selector(TipRemarkAction) forControlEvents:UIControlEventTouchUpInside];
-        }
+        traditionTextViewTableViewCell.itemName    = valueArray[0];
+        traditionTextViewTableViewCell.content     = valueArray[1];
         
         traditionTextViewTableViewCell.inputTV.text = @"请填写";
         
@@ -91,8 +79,6 @@
         if (!traditionPickersTableViewCell) {
             traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
         }
-        
-        NSArray *valueArray = self.dataSource[indexPath.row];
         
         traditionPickersTableViewCell.itemName    = valueArray[0];
         traditionPickersTableViewCell.content     = valueArray[1];
@@ -190,10 +176,6 @@
 
 #pragma mark - event response
 
-- (void)TipRemarkAction{
-    
-    NSLog(@"或弹出提示信息");
-}
 
 #pragma mark - private method
 
