@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412999641C61DF5700357FE6 /* UITextView+CenterContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 412999631C61DF5700357FE6 /* UITextView+CenterContent.m */; };
 		9837676E1C48CF85004B7EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837676D1C48CF85004B7EB7 /* main.m */; };
 		983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767701C48CF85004B7EB7 /* AppDelegate.m */; };
 		983767741C48CF85004B7EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767731C48CF85004B7EB7 /* ViewController.m */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		1C7716C8757C5A2FF22F18C1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		412999621C61DF5700357FE6 /* UITextView+CenterContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CenterContent.h"; sourceTree = "<group>"; };
+		412999631C61DF5700357FE6 /* UITextView+CenterContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CenterContent.m"; sourceTree = "<group>"; };
 		5C70462A2B02699A1947C5DE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		983767681C48CF85004B7EB7 /* RYTableFormList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RYTableFormList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9837676C1C48CF85004B7EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				985FAA971C4DCB27000AB2F8 /* ReloadContentProtocol.h */,
 				98D34F211C5F55AB0053FE00 /* NSObject+isValidValue.h */,
 				98D34F221C5F55AB0053FE00 /* NSObject+isValidValue.m */,
+				412999621C61DF5700357FE6 /* UITextView+CenterContent.h */,
+				412999631C61DF5700357FE6 /* UITextView+CenterContent.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				983767651C48CF85004B7EB7 /* Frameworks */,
 				983767661C48CF85004B7EB7 /* Resources */,
 				9CE0645A0D47141F1451CEC4 /* Copy Pods Resources */,
+				2D47568F097C30C783B80CFE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -461,6 +467,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		2D47568F097C30C783B80CFE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9CE0645A0D47141F1451CEC4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +511,7 @@
 				983767741C48CF85004B7EB7 /* ViewController.m in Sources */,
 				985FAAB01C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m in Sources */,
 				98BE8CE11C4CB9EE000D7477 /* TraditionCustomerTableViewCell.m in Sources */,
+				412999641C61DF5700357FE6 /* UITextView+CenterContent.m in Sources */,
 				985FAAA61C4DD356000AB2F8 /* RYAnimationAdaptor.m in Sources */,
 				98BE8CE01C4CB9EE000D7477 /* TraditionAddressPickerTableViewCell.m in Sources */,
 				98BE8CE81C4CB9EE000D7477 /* TraditionTextViewTableViewCell.m in Sources */,
