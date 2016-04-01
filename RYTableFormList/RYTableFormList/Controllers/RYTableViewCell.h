@@ -12,12 +12,8 @@
 #import "ReloadContentProtocol.h"
 
 const static NSInteger max_width = 125;
-const static
 
 @interface RYTableViewCell : UITableViewCell <ReloadContentProtocol,PickerViewDelegte>
-
-//条目名称
-@property (nonatomic, strong) UILabel *nameLabel;
 
 //属性控制
 @property (nonatomic, copy)   NSDictionary *contentLabelAttributesDict;

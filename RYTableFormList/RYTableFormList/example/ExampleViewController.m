@@ -12,6 +12,7 @@
 #import "UIFactory.h"
 #import "PickerView.h"
 #import "PickerView+PickerViewMethod.h"
+#import "RYListFormTableViewCell.h"
 
 @interface ExampleViewController () <UITableViewDelegate,UITableViewDataSource,PickerViewDelegte>
 
@@ -60,47 +61,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSArray *valueArray = self.dataSource[indexPath.row];
 
-   if (8 == indexPath.row || 9 == indexPath.row || 10 == indexPath.row || 11 == indexPath.row) {//TextView之类
+    NSArray *valueArray = self.dataSource[indexPath.row];
+    
+    RYListFormTableViewCell *listFormTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"RYListFormTableViewCell"];
+    
+    if (!listFormTableViewCell) {
+        listFormTableViewCell = [[NSBundle mainBundle] loadNibNamed:@"RYListFormTableViewCell" owner:self options:nil][0];
         
-        TraditionTextViewTableViewCell *traditionTextViewTableViewCell = [TraditionTextViewTableViewCell initCellWithTableView:tableView];
-        
-        traditionTextViewTableViewCell.itemName    = valueArray[0];
-        traditionTextViewTableViewCell.content     = valueArray[1];
-        traditionTextViewTableViewCell.unitContent = valueArray[2];
-        traditionTextViewTableViewCell.unitType    = [valueArray[3] integerValue];
-        
-        if (8 == indexPath.row) {
-            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleRemarks;
-        }else if (9 == indexPath.row){
-            
-            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleComment;
-        }else if (10 == indexPath.row || 11 == indexPath.row){
-            
-            traditionTextViewTableViewCell.tableTextViewCellStyle = TableTextViewCellStyleDefault;
-        }
-        
-        [traditionTextViewTableViewCell reloadData];
-        
-        return traditionTextViewTableViewCell;
-        
-    }else{
-        
-        TraditionPickersTableViewCell *traditionPickersTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"TraditionDatePickerElement"];
-        
-        if (!traditionPickersTableViewCell) {
-            traditionPickersTableViewCell = [[TraditionPickersTableViewCell alloc] init];
-        }
-        
-        traditionPickersTableViewCell.itemName    = valueArray[0];
-        traditionPickersTableViewCell.content     = valueArray[1];
-        traditionPickersTableViewCell.unitContent = valueArray[2];
-        traditionPickersTableViewCell.unitType    = [valueArray[3] integerValue];
-        [traditionPickersTableViewCell reloadData];
-        
-        return traditionPickersTableViewCell;
     }
+    
+    TraditionPickersTableViewCell *p_cell = listFormTableViewCell.traditionPickersTableViewCell;
+    [p_cell reloadData];
+    
+    return p_cell;
     
 }
 

@@ -13,6 +13,9 @@
 //传统日期控件
 @interface TraditionPickersTableViewCell : RYTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 - (void)reloadData;
 
 @end

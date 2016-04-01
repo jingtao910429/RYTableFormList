@@ -10,9 +10,6 @@
 #import "RunTimeTool.h"
 #import <objc/runtime.h>
 
-//用static修饰后，不能提供外界访问
-//static const NSString *className = @"NameLabel";
-//const NSString *baseNameLabel = @"NameLabel";
 
 @interface RYTableViewCell ()
 
@@ -35,16 +32,18 @@
 }
 
 - (void)createSubviews {
-    
+    /*
     [self.contentView addSubview:self.nameLabel];
     [[RunTimeTool shareInstance] setUIAttributeWithInstance:self.nameLabel attributes:[[RunTimeTool shareInstance] attributes]];
     [self setNeedsDisplay];
+     *
 }
 
 #pragma mark UI和数据刷新
 
 - (void)reloadData {
     
+    /*
     NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:15]};
     
     CGSize size = [self.itemName boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
@@ -55,6 +54,7 @@
     self.nameLabel.frame = CGRectMake(LEFT_SPACE, 0, size.width > max_width ? max_width : size.width, self.frame.size.height);
     
     self.nameLabel.text = self.itemName;
+     */
 }
 
 - (void)reloadUI {
@@ -69,16 +69,16 @@
 
 #pragma mark getters & setters
 
-- (UILabel *)nameLabel {
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_SPACE, 0, TITLE_LABEL_WIDTH + 20, self.frame.size.height)];
-        _nameLabel.font = [UIFont systemFontOfSize:15];
-        _nameLabel.textColor = [UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:1.0f];
-        _nameLabel.textAlignment = NSTextAlignmentLeft;
-        _nameLabel.numberOfLines = 2;
-        
-    }
-    return _nameLabel;
-}
+//- (UILabel *)nameLabel {
+//    if (!_nameLabel) {
+//        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_SPACE, 0, TITLE_LABEL_WIDTH + 20, self.frame.size.height)];
+//        _nameLabel.font = [UIFont systemFontOfSize:15];
+//        _nameLabel.textColor = [UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:1.0f];
+//        _nameLabel.textAlignment = NSTextAlignmentLeft;
+//        _nameLabel.numberOfLines = 2;
+//        
+//    }
+//    return _nameLabel;
+//}
 
 @end
