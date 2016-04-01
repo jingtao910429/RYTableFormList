@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
 #import "PickerView.h"
+#import "ListFormModel.h"
 
 //传统日期控件
 @interface TraditionPickersTableViewCell : RYTableViewCell
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
-- (void)reloadData;
+
+- (void)reloadDataWithModel:(ListFormModel *)listFormModel;
 
 @end

@@ -48,16 +48,16 @@ const NSInteger left_max_width = 145;
 
 #pragma mark 数据刷新
 
-- (void)reloadData {
+- (void)reloadDataWithModel:(ListFormModel *)listFormModel {
     
     [super reloadData];
     
     self.contentLabelAttributesDict = @{
-                                        @"text":@"edddd",
-                                        @"textColor":[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0f],
+                                        @"text"         :listFormModel.name_value,
+                                        @"textColor"    :[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0f],
                                         @"textAlignment":@(NSTextAlignmentRight),
-                                        @"tag":@(CONTENTLABEL_TAG),
-                                        @"font":[UIFont systemFontOfSize:14]
+                                        @"tag"          :@(CONTENTLABEL_TAG),
+                                        @"font"         :[UIFont systemFontOfSize:14]
                                         };
     
     if (self.unitType == UITableViewCellUnitTypeNone) {
@@ -67,12 +67,12 @@ const NSInteger left_max_width = 145;
     }else {
         
         self.unitLabelAttributesDict = @{
-                                         @"text":@"t",
+                                         @"text"         :listFormModel.content_value,
                                          @"textAlignment":@(NSTextAlignmentRight),
                                          @"numberOfLines":@(1),
-                                         @"font":[UIFont systemFontOfSize:15],
-                                         @"textColor":[UIColor blackColor],
-                                         @"tag":@(UNITCONTENT_TAG)};
+                                         @"font"         :[UIFont systemFontOfSize:15],
+                                         @"textColor"    :[UIColor blackColor],
+                                         @"tag"          :@(UNITCONTENT_TAG)};
     }
     
     if (self.contentLabelAttributesDict) {

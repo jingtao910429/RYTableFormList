@@ -35,6 +35,8 @@
 		9895F8F31CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E61CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m */; };
 		9895F8F41CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E81CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m */; };
 		9895F8F51CAE6DFC00294F80 /* TraditionTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8EA1CAE6DFC00294F80 /* TraditionTextTableViewCell.m */; };
+		9895F8FB1CAE6E9600294F80 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8FA1CAE6E9600294F80 /* CommonModel.m */; };
+		9895F8FE1CAE708200294F80 /* ListFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8FD1CAE708200294F80 /* ListFormModel.m */; };
 		98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */; };
 		98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBE1C4C87EB000D7477 /* UIFactory.m */; };
 		98BE8CC41C4CAE9D000D7477 /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CC31C4CAE9D000D7477 /* PickerView.m */; };
@@ -113,6 +115,10 @@
 		9895F8E81CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		9895F8E91CAE6DFC00294F80 /* TraditionTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextTableViewCell.h; sourceTree = "<group>"; };
 		9895F8EA1CAE6DFC00294F80 /* TraditionTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextTableViewCell.m; sourceTree = "<group>"; };
+		9895F8F91CAE6E9600294F80 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
+		9895F8FA1CAE6E9600294F80 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		9895F8FC1CAE708200294F80 /* ListFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFormModel.h; sourceTree = "<group>"; };
+		9895F8FD1CAE708200294F80 /* ListFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFormModel.m; sourceTree = "<group>"; };
 		98BE8CBA1C4C7A4F000D7477 /* RunTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeTool.h; sourceTree = "<group>"; };
 		98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunTimeTool.m; sourceTree = "<group>"; };
 		98BE8CBD1C4C87EB000D7477 /* UIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFactory.h; sourceTree = "<group>"; };
@@ -332,6 +338,10 @@
 		9895F8D41CAE6DBC00294F80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9895F8F91CAE6E9600294F80 /* CommonModel.h */,
+				9895F8FA1CAE6E9600294F80 /* CommonModel.m */,
+				9895F8FC1CAE708200294F80 /* ListFormModel.h */,
+				9895F8FD1CAE708200294F80 /* ListFormModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -534,7 +544,9 @@
 				9895F8F31CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m in Sources */,
 				9895F8F01CAE6DFC00294F80 /* TraditionImageTableViewCell.m in Sources */,
 				98D34F231C5F55AB0053FE00 /* NSObject+isValidValue.m in Sources */,
+				9895F8FB1CAE6E9600294F80 /* CommonModel.m in Sources */,
 				9895F8EF1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m in Sources */,
+				9895F8FE1CAE708200294F80 /* ListFormModel.m in Sources */,
 				9895F8EE1CAE6DFC00294F80 /* TraditionAddressPickerTableViewCell.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
 				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,

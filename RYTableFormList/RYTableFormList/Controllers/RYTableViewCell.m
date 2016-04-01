@@ -36,7 +36,7 @@
     [self.contentView addSubview:self.nameLabel];
     [[RunTimeTool shareInstance] setUIAttributeWithInstance:self.nameLabel attributes:[[RunTimeTool shareInstance] attributes]];
     [self setNeedsDisplay];
-     *
+     */
 }
 
 #pragma mark UI和数据刷新

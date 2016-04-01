@@ -13,6 +13,7 @@
 #import "PickerView.h"
 #import "PickerView+PickerViewMethod.h"
 #import "RYListFormTableViewCell.h"
+#import "ListFormModel.h"
 
 @interface ExampleViewController () <UITableViewDelegate,UITableViewDataSource,PickerViewDelegte>
 
@@ -61,18 +62,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
-    NSArray *valueArray = self.dataSource[indexPath.row];
     
-    RYListFormTableViewCell *listFormTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"RYListFormTableViewCell"];
+    RYListFormTableViewCell *listFormTableView_C = [tableView dequeueReusableCellWithIdentifier:@"RYListFormTableViewCell"];
     
-    if (!listFormTableViewCell) {
-        listFormTableViewCell = [[NSBundle mainBundle] loadNibNamed:@"RYListFormTableViewCell" owner:self options:nil][0];
+    if (!listFormTableView_C) {
+        listFormTableView_C = [[NSBundle mainBundle] loadNibNamed:@"RYListFormTableViewCell" owner:self options:nil][0];
         
     }
     
-    TraditionPickersTableViewCell *p_cell = listFormTableViewCell.traditionPickersTableViewCell;
-    [p_cell reloadData];
+    TraditionPickersTableViewCell *p_cell = listFormTableView_C.traditionPickersTableViewCell;
+    
+    ListFormModel *listFormModel = self.dataSource[indexPath.row];
+    [p_cell reloadDataWithModel:listFormModel];
     
     return p_cell;
     
@@ -173,6 +174,7 @@
      *    内部数组类型，@[@"条目名称（keyName）",@"条目内容（content）",@"单位（unit）",@"单位类型（有/无）"]
      */
     
+    /*
     self.dataSource = [[NSMutableArray alloc] initWithObjects:
                        @[@"DateAndTime",@"DateAndTime_Content",@"元",@(UITableViewCellUnitTypeHave)],
                        @[@"DateOnly",@"DateOnly_Content",@"",@(UITableViewCellUnitTypeNone)],
@@ -186,6 +188,22 @@
                        @[@"评价如下：",@"请填写",@"",@(UITableViewCellUnitTypeNone)],
                        @[@"详细地址：",@"请填写",@"平方米",@(UITableViewCellUnitTypeHave)],
                        @[@"公馆号",@"请填写",@"",@(UITableViewCellUnitTypeNone)],nil];
+    
+    */
+    
+    ListFormModel *model = [[ListFormModel alloc] init];
+    
+    //测试数据
+    model.name_value    = @"DateAndTime";
+    model.content_value = @"DateAndTime_Content";
+    
+    ListFormModel *model1 = [[ListFormModel alloc] init];
+    
+    //测试数据
+    model1.name_value    = @"Normal_One";
+    model1.content_value = @"请填写";
+    
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:model,model1, nil];
     
 }
 
