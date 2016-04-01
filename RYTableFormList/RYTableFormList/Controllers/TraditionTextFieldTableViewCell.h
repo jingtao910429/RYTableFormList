@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
 
-//传统TextField
 @interface TraditionTextFieldTableViewCell : RYTableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *contentTextField;
 
 @end
