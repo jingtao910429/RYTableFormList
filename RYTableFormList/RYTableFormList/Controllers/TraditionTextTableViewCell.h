@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
 
-//传统文本
 @interface TraditionTextTableViewCell : RYTableViewCell
 
 @end

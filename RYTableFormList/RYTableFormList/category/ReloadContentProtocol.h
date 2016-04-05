@@ -12,6 +12,6 @@
 @protocol ReloadContentProtocol <NSObject>
 
 - (void)reloadData;
-- (void)reloadUI;
+- (void)refreshUI;
 
 @end

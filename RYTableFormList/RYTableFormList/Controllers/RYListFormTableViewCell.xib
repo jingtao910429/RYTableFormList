@@ -49,20 +49,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="58j-nE-Wpj" firstAttribute="top" secondItem="cmQ-ab-afE" secondAttribute="top" id="DtN-tM-OlC"/>
-                    <constraint firstItem="cmQ-ab-afE" firstAttribute="top" secondItem="orM-cv-sfQ" secondAttribute="topMargin" constant="-6" id="Qgs-zv-LNH"/>
                     <constraint firstAttribute="trailingMargin" secondItem="58j-nE-Wpj" secondAttribute="trailing" constant="20" id="YZc-0E-9FM"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="cmQ-ab-afE" secondAttribute="bottom" constant="-7" id="oxC-RC-6K2"/>
                     <constraint firstItem="58j-nE-Wpj" firstAttribute="centerY" secondItem="orM-cv-sfQ" secondAttribute="centerY" id="ui2-Zo-7f2"/>
                     <constraint firstItem="58j-nE-Wpj" firstAttribute="bottom" secondItem="cmQ-ab-afE" secondAttribute="bottom" id="xMs-Xv-sAF"/>
                     <constraint firstItem="cmQ-ab-afE" firstAttribute="leading" secondItem="orM-cv-sfQ" secondAttribute="leading" constant="15" id="yIc-gX-PQr"/>
                     <constraint firstItem="58j-nE-Wpj" firstAttribute="leading" secondItem="cmQ-ab-afE" secondAttribute="trailing" constant="2" id="yR2-sW-Ufg"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="Qgs-zv-LNH"/>
-                        <exclude reference="oxC-RC-6K2"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="nameLabel" destination="cmQ-ab-afE" id="AOZ-Ng-2PB"/>
@@ -99,18 +91,13 @@
                     <constraint firstItem="X7y-ET-v0s" firstAttribute="top" secondItem="Rrf-MB-gr4" secondAttribute="topMargin" constant="-6" id="819-cs-XrR"/>
                     <constraint firstItem="X7y-ET-v0s" firstAttribute="leading" secondItem="Rrf-MB-gr4" secondAttribute="leadingMargin" constant="15" id="LZB-pl-owY"/>
                     <constraint firstItem="Mlf-gz-tQ5" firstAttribute="centerY" secondItem="X7y-ET-v0s" secondAttribute="centerY" id="R9X-x1-aMI"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="X7y-ET-v0s" secondAttribute="bottom" constant="-7" id="osS-2T-2Iv"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="osS-2T-2Iv"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentTextField" destination="Mlf-gz-tQ5" id="qF9-Mj-PBn"/>
                 <outlet property="nameLabel" destination="X7y-ET-v0s" id="5a4-jS-Ixz"/>
             </connections>
+            <point key="canvasLocation" x="388" y="524"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TraditionSliderTableViewCellID" id="Dkg-Zy-9rX" customClass="TraditionSliderTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -120,7 +107,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFU-u5-SMI">
-                        <rect key="frame" x="0.0" y="2" width="150" height="40"/>
+                        <rect key="frame" x="23" y="2" width="150" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="34z-5C-71e"/>
                             <constraint firstAttribute="width" constant="150" id="Z93-0V-vpC"/>
@@ -130,7 +117,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-HF-aFX">
-                        <rect key="frame" x="153" y="8" width="141" height="31"/>
+                        <rect key="frame" x="176" y="8" width="118" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="AII-Th-Xfx"/>
                         </constraints>
@@ -141,12 +128,16 @@
                     <constraint firstAttribute="bottomMargin" secondItem="yDs-HF-aFX" secondAttribute="bottom" constant="-3" id="CGf-SQ-cM9"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SFU-u5-SMI" secondAttribute="bottom" constant="-7" id="D8q-8B-gTb"/>
                     <constraint firstItem="yDs-HF-aFX" firstAttribute="leading" secondItem="SFU-u5-SMI" secondAttribute="trailing" constant="5" id="NXf-gH-HcS"/>
-                    <constraint firstItem="SFU-u5-SMI" firstAttribute="leading" secondItem="7jC-ZI-Bwm" secondAttribute="leadingMargin" constant="-8" id="YUp-1o-uWq"/>
+                    <constraint firstItem="SFU-u5-SMI" firstAttribute="leading" secondItem="7jC-ZI-Bwm" secondAttribute="leadingMargin" constant="15" id="YUp-1o-uWq"/>
                     <constraint firstItem="SFU-u5-SMI" firstAttribute="top" secondItem="7jC-ZI-Bwm" secondAttribute="topMargin" constant="-6" id="axI-G5-1rM"/>
                     <constraint firstItem="yDs-HF-aFX" firstAttribute="top" secondItem="7jC-ZI-Bwm" secondAttribute="topMargin" id="hGe-hm-dPt"/>
                     <constraint firstItem="SFU-u5-SMI" firstAttribute="centerY" secondItem="7jC-ZI-Bwm" secondAttribute="centerY" id="oeE-x5-P3c"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="sliderCompent" destination="yDs-HF-aFX" id="U0z-Vo-SGi"/>
+                <outlet property="sliderNameLabel" destination="SFU-u5-SMI" id="WQM-9s-ASh"/>
+            </connections>
             <point key="canvasLocation" x="336" y="438"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TraditionSwitcherTableViewCellID" id="IcP-4o-9g5" customClass="TraditionSwitcherTableViewCell">
@@ -157,14 +148,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihc-27-vez">
-                        <rect key="frame" x="263" y="6" width="51" height="31"/>
+                        <rect key="frame" x="243" y="6" width="51" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="4nN-pT-XGu"/>
                             <constraint firstAttribute="height" constant="31" id="Ogh-hD-mbh"/>
                         </constraints>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="switch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-me-mD4">
-                        <rect key="frame" x="0.0" y="2" width="150" height="40"/>
+                        <rect key="frame" x="23" y="2" width="150" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="HMO-oa-SXa"/>
                             <constraint firstAttribute="height" constant="40" id="ngr-CX-919"/>
@@ -176,24 +167,60 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ds6-me-mD4" firstAttribute="centerY" secondItem="Lu2-wY-E1E" secondAttribute="centerY" id="CZQ-z8-uUK"/>
-                    <constraint firstItem="ihc-27-vez" firstAttribute="trailing" secondItem="Lu2-wY-E1E" secondAttribute="trailingMargin" id="Xm9-eQ-gk5"/>
                     <constraint firstItem="ihc-27-vez" firstAttribute="top" secondItem="Lu2-wY-E1E" secondAttribute="topMargin" constant="-2" id="e92-9J-YEj"/>
                     <constraint firstItem="ds6-me-mD4" firstAttribute="top" secondItem="Lu2-wY-E1E" secondAttribute="topMargin" constant="-6" id="fKO-an-dy9"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ihc-27-vez" secondAttribute="bottom" constant="-2" id="jwa-7h-5Br"/>
-                    <constraint firstItem="ds6-me-mD4" firstAttribute="leading" secondItem="Lu2-wY-E1E" secondAttribute="leadingMargin" constant="-8" id="qSn-HK-rC0"/>
-                    <constraint firstItem="ihc-27-vez" firstAttribute="trailing" secondItem="Lu2-wY-E1E" secondAttribute="trailingMargin" constant="20" id="s1h-wr-5Bx"/>
-                    <constraint firstItem="ihc-27-vez" firstAttribute="leading" secondItem="ds6-me-mD4" secondAttribute="trailing" constant="113" id="ufR-5z-9Po"/>
+                    <constraint firstItem="ds6-me-mD4" firstAttribute="leading" secondItem="Lu2-wY-E1E" secondAttribute="leadingMargin" constant="15" id="qSn-HK-rC0"/>
+                    <constraint firstItem="ihc-27-vez" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ds6-me-mD4" secondAttribute="trailing" constant="93" id="ufR-5z-9Po"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ihc-27-vez" secondAttribute="trailing" constant="20" id="utQ-gY-d3Q"/>
                     <constraint firstItem="ihc-27-vez" firstAttribute="centerY" secondItem="ds6-me-mD4" secondAttribute="centerY" id="wK7-aG-cWM"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ds6-me-mD4" secondAttribute="bottom" constant="-7" id="y5V-Pe-HYi"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="Xm9-eQ-gk5"/>
-                        <exclude reference="s1h-wr-5Bx"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="90" y="547"/>
+            <connections>
+                <outlet property="switchCompent" destination="ihc-27-vez" id="gOb-Jk-qbj"/>
+                <outlet property="switchNameLabel" destination="ds6-me-mD4" id="g4h-ZS-hrE"/>
+            </connections>
+            <point key="canvasLocation" x="134" y="642"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TraditionImageTableViewCellID" id="ta9-Om-lkf" customClass="TraditionImageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ta9-Om-lkf" id="9iZ-dw-ak2">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imageNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-Jx-zJo">
+                        <rect key="frame" x="23" y="2" width="150" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="VtD-jw-uYa"/>
+                            <constraint firstAttribute="width" constant="150" id="jD0-Bx-8fO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EM2-By-H1m">
+                        <rect key="frame" x="253" y="0.0" width="39" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="ur2-Gb-cZo"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fHy-Jx-zJo" firstAttribute="leading" secondItem="9iZ-dw-ak2" secondAttribute="leadingMargin" constant="15" id="ADh-oU-cCd"/>
+                    <constraint firstItem="fHy-Jx-zJo" firstAttribute="top" secondItem="9iZ-dw-ak2" secondAttribute="topMargin" constant="-6" id="EAX-Aj-C4z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fHy-Jx-zJo" secondAttribute="bottom" constant="-7" id="MKH-zU-ioN"/>
+                    <constraint firstItem="EM2-By-H1m" firstAttribute="centerY" secondItem="fHy-Jx-zJo" secondAttribute="centerY" id="Vrw-9f-boN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EM2-By-H1m" secondAttribute="trailing" constant="20" id="gER-Kv-uiT"/>
+                    <constraint firstItem="EM2-By-H1m" firstAttribute="leading" secondItem="fHy-Jx-zJo" secondAttribute="trailing" constant="80" id="kD8-G4-xUK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageCompent" destination="EM2-By-H1m" id="ruL-um-o9Z"/>
+                <outlet property="imageNameLabel" destination="fHy-Jx-zJo" id="o1b-eE-ZW8"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="744"/>
         </tableViewCell>
     </objects>
 </document>

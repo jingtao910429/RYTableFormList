@@ -11,7 +11,6 @@
 #import "PickerView.h"
 #import "ListFormModel.h"
 
-//传统日期控件
 @interface TraditionPickersTableViewCell : RYTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

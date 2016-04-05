@@ -8,7 +8,13 @@
 
 #import "TraditionTextFieldTableViewCell.h"
 
+@interface TraditionTextFieldTableViewCell () <UITextFieldDelegate>
+
+@end
+
 @implementation TraditionTextFieldTableViewCell
+
+#pragma mark life cycle
 
 - (void)awakeFromNib {
     // Initialization code
@@ -19,5 +25,9 @@
 
     // Configure the view for the selected state
 }
+
+#pragma mark UITextFieldDelegate
+
+
 
 @end

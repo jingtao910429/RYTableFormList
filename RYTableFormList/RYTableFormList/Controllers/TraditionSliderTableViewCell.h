@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
 
-//传统Slider
 @interface TraditionSliderTableViewCell : RYTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *sliderNameLabel;
+@property (weak, nonatomic) IBOutlet UISlider *sliderCompent;
 
 @end
