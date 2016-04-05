@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RYTableViewCell.h"
 
-//其他自定义视图
+//其他自定义视图(代码定制)
 @interface TraditionCustomerTableViewCell : RYTableViewCell
-
 
 
 @end

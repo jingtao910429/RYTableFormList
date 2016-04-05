@@ -10,7 +10,9 @@
 #import "RYTableViewCell.h"
 
 @interface TraditionSwitcherTableViewCell : RYTableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *switchNameLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *switchNameLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *switchCompent;
+- (IBAction)switchValueChanged:(id)sender;
+
 @end

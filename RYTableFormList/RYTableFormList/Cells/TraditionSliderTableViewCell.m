@@ -20,4 +20,8 @@
     // Configure the view for the selected state
 }
 
+///ValueChanged_Method
+- (IBAction)sliderValueChanged:(id)sender {
+    
+}
 @end

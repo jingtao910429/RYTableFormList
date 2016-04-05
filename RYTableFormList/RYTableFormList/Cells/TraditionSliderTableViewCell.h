@@ -12,5 +12,6 @@
 @interface TraditionSliderTableViewCell : RYTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *sliderNameLabel;
 @property (weak, nonatomic) IBOutlet UISlider *sliderCompent;
+- (IBAction)sliderValueChanged:(id)sender;
 
 @end

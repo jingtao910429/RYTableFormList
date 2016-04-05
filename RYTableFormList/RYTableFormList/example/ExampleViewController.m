@@ -70,13 +70,14 @@
         
     }
     
-    TraditionPickersTableViewCell *p_cell = listFormTableView_C.traditionPickersTableViewCell;
+    //TraditionPickersTableViewCell *p_cell = listFormTableView_C.traditionPickersTableViewCell;
     
-    ListFormModel *listFormModel = self.dataSource[indexPath.row];
-    [p_cell reloadDataWithModel:listFormModel];
+    //ListFormModel *listFormModel = self.dataSource[indexPath.row];
+    //[p_cell reloadDataWithModel:listFormModel];
     
-    return p_cell;
+    //return p_cell;
     
+    return listFormTableView_C.traditionTextFieldTableViewCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

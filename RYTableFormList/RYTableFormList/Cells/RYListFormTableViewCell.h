@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TraditionPickersTableViewCell.h"
+#import "FormListHeader.h"
 
 @interface RYListFormTableViewCell : UITableViewCell
-
-///传统Picker弹出样式
 @property (weak, nonatomic) IBOutlet TraditionPickersTableViewCell *traditionPickersTableViewCell;
+@property (weak, nonatomic) IBOutlet TraditionTextFieldTableViewCell *traditionTextFieldTableViewCell;
+@property (weak, nonatomic) IBOutlet TraditionSliderTableViewCell *traditionSliderTableViewCell;
+@property (weak, nonatomic) IBOutlet TraditionSwitcherTableViewCell *traditionSwitcherTableViewCell;
 
+@property (weak, nonatomic) IBOutlet TraditionImageTableViewCell *traditionImageTableViewCell;
 @end

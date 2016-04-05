@@ -16,7 +16,11 @@
                 <autoresizingMask key="autoresizingMask"/>
             </tableViewCellContentView>
             <connections>
-                <outlet property="traditionPickersTableViewCell" destination="GZW-OP-WaV" id="oEW-1O-zPi"/>
+                <outlet property="traditionImageTableViewCell" destination="ta9-Om-lkf" id="7QH-HL-VN9"/>
+                <outlet property="traditionPickersTableViewCell" destination="GZW-OP-WaV" id="soq-Ej-8KB"/>
+                <outlet property="traditionSliderTableViewCell" destination="Dkg-Zy-9rX" id="ABf-CD-jBN"/>
+                <outlet property="traditionSwitcherTableViewCell" destination="IcP-4o-9g5" id="XH6-mm-YBZ"/>
+                <outlet property="traditionTextFieldTableViewCell" destination="bKu-Yy-MeI" id="X4P-fY-1XN"/>
             </connections>
             <point key="canvasLocation" x="276" y="339"/>
         </tableViewCell>
@@ -69,8 +73,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-gz-tQ5">
-                        <rect key="frame" x="173" y="7" width="139" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-gz-tQ5">
+                        <rect key="frame" x="173" y="14" width="139" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -121,6 +125,9 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="AII-Th-Xfx"/>
                         </constraints>
+                        <connections>
+                            <action selector="sliderValueChanged:" destination="Dkg-Zy-9rX" eventType="valueChanged" id="hih-zW-y1A"/>
+                        </connections>
                     </slider>
                 </subviews>
                 <constraints>
@@ -153,6 +160,9 @@
                             <constraint firstAttribute="width" constant="49" id="4nN-pT-XGu"/>
                             <constraint firstAttribute="height" constant="31" id="Ogh-hD-mbh"/>
                         </constraints>
+                        <connections>
+                            <action selector="switchValueChanged:" destination="IcP-4o-9g5" eventType="valueChanged" id="Lnn-gE-dTn"/>
+                        </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="switch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-me-mD4">
                         <rect key="frame" x="23" y="2" width="150" height="40"/>
