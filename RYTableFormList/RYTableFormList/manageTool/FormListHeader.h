@@ -10,7 +10,6 @@
 #define SCREEN_BOUND_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
 #import "TraditionPickersTableViewCell.h"
-#import "TraditionAddressPickerTableViewCell.h"
 #import "TraditionTextFieldTableViewCell.h"
 #import "TraditionTextTableViewCell.h"
 #import "TraditionSwitcherTableViewCell.h"
