@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		412999641C61DF5700357FE6 /* UITextView+CenterContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 412999631C61DF5700357FE6 /* UITextView+CenterContent.m */; };
+		98004CB51CB3C1B4001A32EE /* RYListFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CA21CB3C1B4001A32EE /* RYListFormTableViewCell.m */; };
+		98004CB61CB3C1B4001A32EE /* RYListFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98004CA31CB3C1B4001A32EE /* RYListFormTableViewCell.xib */; };
+		98004CB71CB3C1B4001A32EE /* RYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CA51CB3C1B4001A32EE /* RYTableViewCell.m */; };
+		98004CB81CB3C1B4001A32EE /* TraditionCustomerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CA71CB3C1B4001A32EE /* TraditionCustomerTableViewCell.m */; };
+		98004CB91CB3C1B4001A32EE /* TraditionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CA91CB3C1B4001A32EE /* TraditionImageTableViewCell.m */; };
+		98004CBA1CB3C1B4001A32EE /* TraditionPickersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CAB1CB3C1B4001A32EE /* TraditionPickersTableViewCell.m */; };
+		98004CBB1CB3C1B4001A32EE /* TraditionSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CAD1CB3C1B4001A32EE /* TraditionSliderTableViewCell.m */; };
+		98004CBC1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CAF1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.m */; };
+		98004CBD1CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CB11CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.m */; };
+		98004CBE1CB3C1B4001A32EE /* TraditionTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98004CB31CB3C1B4001A32EE /* TraditionTextTableViewCell.m */; };
 		9837676E1C48CF85004B7EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837676D1C48CF85004B7EB7 /* main.m */; };
 		983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767701C48CF85004B7EB7 /* AppDelegate.m */; };
 		983767741C48CF85004B7EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983767731C48CF85004B7EB7 /* ViewController.m */; };
@@ -24,16 +34,6 @@
 		985FAAB01C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAAF1C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m */; };
 		985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FAAB21C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m */; };
 		9892E6991C4CE3D500AC69C1 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */; };
-		9895F8EB1CAE6DFC00294F80 /* RYListFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8D71CAE6DFC00294F80 /* RYListFormTableViewCell.m */; };
-		9895F8EC1CAE6DFC00294F80 /* RYListFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9895F8D81CAE6DFC00294F80 /* RYListFormTableViewCell.xib */; };
-		9895F8ED1CAE6DFC00294F80 /* RYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8DA1CAE6DFC00294F80 /* RYTableViewCell.m */; };
-		9895F8EF1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8DE1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m */; };
-		9895F8F01CAE6DFC00294F80 /* TraditionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E01CAE6DFC00294F80 /* TraditionImageTableViewCell.m */; };
-		9895F8F11CAE6DFC00294F80 /* TraditionPickersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E21CAE6DFC00294F80 /* TraditionPickersTableViewCell.m */; };
-		9895F8F21CAE6DFC00294F80 /* TraditionSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E41CAE6DFC00294F80 /* TraditionSliderTableViewCell.m */; };
-		9895F8F31CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E61CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m */; };
-		9895F8F41CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8E81CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m */; };
-		9895F8F51CAE6DFC00294F80 /* TraditionTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8EA1CAE6DFC00294F80 /* TraditionTextTableViewCell.m */; };
 		9895F8FB1CAE6E9600294F80 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8FA1CAE6E9600294F80 /* CommonModel.m */; };
 		9895F8FE1CAE708200294F80 /* ListFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9895F8FD1CAE708200294F80 /* ListFormModel.m */; };
 		98BE8CBC1C4C7A4F000D7477 /* RunTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE8CBB1C4C7A4F000D7477 /* RunTimeTool.m */; };
@@ -60,6 +60,25 @@
 		412999621C61DF5700357FE6 /* UITextView+CenterContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CenterContent.h"; sourceTree = "<group>"; };
 		412999631C61DF5700357FE6 /* UITextView+CenterContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CenterContent.m"; sourceTree = "<group>"; };
 		5C70462A2B02699A1947C5DE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		98004CA11CB3C1B4001A32EE /* RYListFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYListFormTableViewCell.h; sourceTree = "<group>"; };
+		98004CA21CB3C1B4001A32EE /* RYListFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYListFormTableViewCell.m; sourceTree = "<group>"; };
+		98004CA31CB3C1B4001A32EE /* RYListFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYListFormTableViewCell.xib; sourceTree = "<group>"; };
+		98004CA41CB3C1B4001A32EE /* RYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCell.h; sourceTree = "<group>"; };
+		98004CA51CB3C1B4001A32EE /* RYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYTableViewCell.m; sourceTree = "<group>"; };
+		98004CA61CB3C1B4001A32EE /* TraditionCustomerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionCustomerTableViewCell.h; sourceTree = "<group>"; };
+		98004CA71CB3C1B4001A32EE /* TraditionCustomerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionCustomerTableViewCell.m; sourceTree = "<group>"; };
+		98004CA81CB3C1B4001A32EE /* TraditionImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionImageTableViewCell.h; sourceTree = "<group>"; };
+		98004CA91CB3C1B4001A32EE /* TraditionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionImageTableViewCell.m; sourceTree = "<group>"; };
+		98004CAA1CB3C1B4001A32EE /* TraditionPickersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionPickersTableViewCell.h; sourceTree = "<group>"; };
+		98004CAB1CB3C1B4001A32EE /* TraditionPickersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionPickersTableViewCell.m; sourceTree = "<group>"; };
+		98004CAC1CB3C1B4001A32EE /* TraditionSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSliderTableViewCell.h; sourceTree = "<group>"; };
+		98004CAD1CB3C1B4001A32EE /* TraditionSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSliderTableViewCell.m; sourceTree = "<group>"; };
+		98004CAE1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSwitcherTableViewCell.h; sourceTree = "<group>"; };
+		98004CAF1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSwitcherTableViewCell.m; sourceTree = "<group>"; };
+		98004CB01CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		98004CB11CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		98004CB21CB3C1B4001A32EE /* TraditionTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextTableViewCell.h; sourceTree = "<group>"; };
+		98004CB31CB3C1B4001A32EE /* TraditionTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextTableViewCell.m; sourceTree = "<group>"; };
 		983767681C48CF85004B7EB7 /* RYTableFormList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RYTableFormList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9837676C1C48CF85004B7EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9837676D1C48CF85004B7EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,25 +112,6 @@
 		985FAAB21C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYMoveAnimationAdaptor.m; sourceTree = "<group>"; };
 		9892E6971C4CE3D500AC69C1 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		9892E6981C4CE3D500AC69C1 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
-		9895F8D61CAE6DFC00294F80 /* RYListFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYListFormTableViewCell.h; sourceTree = "<group>"; };
-		9895F8D71CAE6DFC00294F80 /* RYListFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYListFormTableViewCell.m; sourceTree = "<group>"; };
-		9895F8D81CAE6DFC00294F80 /* RYListFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYListFormTableViewCell.xib; sourceTree = "<group>"; };
-		9895F8D91CAE6DFC00294F80 /* RYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYTableViewCell.h; sourceTree = "<group>"; };
-		9895F8DA1CAE6DFC00294F80 /* RYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYTableViewCell.m; sourceTree = "<group>"; };
-		9895F8DD1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionCustomerTableViewCell.h; sourceTree = "<group>"; };
-		9895F8DE1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionCustomerTableViewCell.m; sourceTree = "<group>"; };
-		9895F8DF1CAE6DFC00294F80 /* TraditionImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionImageTableViewCell.h; sourceTree = "<group>"; };
-		9895F8E01CAE6DFC00294F80 /* TraditionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionImageTableViewCell.m; sourceTree = "<group>"; };
-		9895F8E11CAE6DFC00294F80 /* TraditionPickersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionPickersTableViewCell.h; sourceTree = "<group>"; };
-		9895F8E21CAE6DFC00294F80 /* TraditionPickersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionPickersTableViewCell.m; sourceTree = "<group>"; };
-		9895F8E31CAE6DFC00294F80 /* TraditionSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSliderTableViewCell.h; sourceTree = "<group>"; };
-		9895F8E41CAE6DFC00294F80 /* TraditionSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSliderTableViewCell.m; sourceTree = "<group>"; };
-		9895F8E51CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionSwitcherTableViewCell.h; sourceTree = "<group>"; };
-		9895F8E61CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionSwitcherTableViewCell.m; sourceTree = "<group>"; };
-		9895F8E71CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		9895F8E81CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		9895F8E91CAE6DFC00294F80 /* TraditionTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionTextTableViewCell.h; sourceTree = "<group>"; };
-		9895F8EA1CAE6DFC00294F80 /* TraditionTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionTextTableViewCell.m; sourceTree = "<group>"; };
 		9895F8F91CAE6E9600294F80 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
 		9895F8FA1CAE6E9600294F80 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
 		9895F8FC1CAE708200294F80 /* ListFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFormModel.h; sourceTree = "<group>"; };
@@ -169,6 +169,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		98004C9F1CB3C13D001A32EE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				98004CA11CB3C1B4001A32EE /* RYListFormTableViewCell.h */,
+				98004CA21CB3C1B4001A32EE /* RYListFormTableViewCell.m */,
+				98004CA31CB3C1B4001A32EE /* RYListFormTableViewCell.xib */,
+				98004CA41CB3C1B4001A32EE /* RYTableViewCell.h */,
+				98004CA51CB3C1B4001A32EE /* RYTableViewCell.m */,
+				98004CA61CB3C1B4001A32EE /* TraditionCustomerTableViewCell.h */,
+				98004CA71CB3C1B4001A32EE /* TraditionCustomerTableViewCell.m */,
+				98004CA81CB3C1B4001A32EE /* TraditionImageTableViewCell.h */,
+				98004CA91CB3C1B4001A32EE /* TraditionImageTableViewCell.m */,
+				98004CAA1CB3C1B4001A32EE /* TraditionPickersTableViewCell.h */,
+				98004CAB1CB3C1B4001A32EE /* TraditionPickersTableViewCell.m */,
+				98004CAC1CB3C1B4001A32EE /* TraditionSliderTableViewCell.h */,
+				98004CAD1CB3C1B4001A32EE /* TraditionSliderTableViewCell.m */,
+				98004CAE1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.h */,
+				98004CAF1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.m */,
+				98004CB01CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.h */,
+				98004CB11CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.m */,
+				98004CB21CB3C1B4001A32EE /* TraditionTextTableViewCell.h */,
+				98004CB31CB3C1B4001A32EE /* TraditionTextTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9837675F1C48CF85004B7EB7 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +218,7 @@
 		9837676A1C48CF85004B7EB7 /* RYTableFormList */ = {
 			isa = PBXGroup;
 			children = (
+				98004C9F1CB3C13D001A32EE /* Cells */,
 				9895F8D51CAE6DFC00294F80 /* Controllers */,
 				9895F8D41CAE6DBC00294F80 /* Models */,
 				985FAA981C4DD2D4000AB2F8 /* AnimateFrameWork */,
@@ -346,25 +373,6 @@
 		9895F8D51CAE6DFC00294F80 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9895F8D61CAE6DFC00294F80 /* RYListFormTableViewCell.h */,
-				9895F8D71CAE6DFC00294F80 /* RYListFormTableViewCell.m */,
-				9895F8D81CAE6DFC00294F80 /* RYListFormTableViewCell.xib */,
-				9895F8D91CAE6DFC00294F80 /* RYTableViewCell.h */,
-				9895F8DA1CAE6DFC00294F80 /* RYTableViewCell.m */,
-				9895F8DD1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.h */,
-				9895F8DE1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m */,
-				9895F8DF1CAE6DFC00294F80 /* TraditionImageTableViewCell.h */,
-				9895F8E01CAE6DFC00294F80 /* TraditionImageTableViewCell.m */,
-				9895F8E11CAE6DFC00294F80 /* TraditionPickersTableViewCell.h */,
-				9895F8E21CAE6DFC00294F80 /* TraditionPickersTableViewCell.m */,
-				9895F8E31CAE6DFC00294F80 /* TraditionSliderTableViewCell.h */,
-				9895F8E41CAE6DFC00294F80 /* TraditionSliderTableViewCell.m */,
-				9895F8E51CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.h */,
-				9895F8E61CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m */,
-				9895F8E71CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.h */,
-				9895F8E81CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m */,
-				9895F8E91CAE6DFC00294F80 /* TraditionTextTableViewCell.h */,
-				9895F8EA1CAE6DFC00294F80 /* TraditionTextTableViewCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -454,8 +462,8 @@
 			files = (
 				983767771C48CF85004B7EB7 /* Main.storyboard in Resources */,
 				9837677C1C48CF85004B7EB7 /* LaunchScreen.xib in Resources */,
-				9895F8EC1CAE6DFC00294F80 /* RYListFormTableViewCell.xib in Resources */,
 				983767791C48CF85004B7EB7 /* Images.xcassets in Resources */,
+				98004CB61CB3C1B4001A32EE /* RYListFormTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,31 +530,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				985FAAA81C4DD356000AB2F8 /* RYPulseAnimationAdaptor.m in Sources */,
+				98004CBB1CB3C1B4001A32EE /* TraditionSliderTableViewCell.m in Sources */,
 				98BE8CC41C4CAE9D000D7477 /* PickerView.m in Sources */,
+				98004CBE1CB3C1B4001A32EE /* TraditionTextTableViewCell.m in Sources */,
 				983767741C48CF85004B7EB7 /* ViewController.m in Sources */,
 				985FAAB01C4DDDEF000AB2F8 /* RYBackGroundColorAnimationAdaptor.m in Sources */,
+				98004CB81CB3C1B4001A32EE /* TraditionCustomerTableViewCell.m in Sources */,
+				98004CB71CB3C1B4001A32EE /* RYTableViewCell.m in Sources */,
 				412999641C61DF5700357FE6 /* UITextView+CenterContent.m in Sources */,
 				985FAAA61C4DD356000AB2F8 /* RYAnimationAdaptor.m in Sources */,
 				9892E6991C4CE3D500AC69C1 /* UIView+Additions.m in Sources */,
 				985FAAA71C4DD356000AB2F8 /* RYFlyinAnimationAdaptor.m in Sources */,
 				985FAAA91C4DD356000AB2F8 /* RYRotationAnimationAdaptor.m in Sources */,
-				9895F8F11CAE6DFC00294F80 /* TraditionPickersTableViewCell.m in Sources */,
-				9895F8F51CAE6DFC00294F80 /* TraditionTextTableViewCell.m in Sources */,
-				9895F8ED1CAE6DFC00294F80 /* RYTableViewCell.m in Sources */,
 				985FAAB31C4DE6EF000AB2F8 /* RYMoveAnimationAdaptor.m in Sources */,
-				9895F8EB1CAE6DFC00294F80 /* RYListFormTableViewCell.m in Sources */,
-				9895F8F21CAE6DFC00294F80 /* TraditionSliderTableViewCell.m in Sources */,
-				9895F8F31CAE6DFC00294F80 /* TraditionSwitcherTableViewCell.m in Sources */,
-				9895F8F01CAE6DFC00294F80 /* TraditionImageTableViewCell.m in Sources */,
 				98D34F231C5F55AB0053FE00 /* NSObject+isValidValue.m in Sources */,
 				9895F8FB1CAE6E9600294F80 /* CommonModel.m in Sources */,
-				9895F8EF1CAE6DFC00294F80 /* TraditionCustomerTableViewCell.m in Sources */,
 				9895F8FE1CAE708200294F80 /* ListFormModel.m in Sources */,
 				983767711C48CF85004B7EB7 /* AppDelegate.m in Sources */,
 				985FAAAA1C4DD356000AB2F8 /* RYAnimationView.m in Sources */,
 				985FAAAD1C4DD553000AB2F8 /* RYOpacityAnimationAdaptor.m in Sources */,
-				9895F8F41CAE6DFC00294F80 /* TraditionTextFieldTableViewCell.m in Sources */,
+				98004CB51CB3C1B4001A32EE /* RYListFormTableViewCell.m in Sources */,
 				98BE8CC71C4CB9A6000D7477 /* PickerView+PickerViewMethod.m in Sources */,
+				98004CBD1CB3C1B4001A32EE /* TraditionTextFieldTableViewCell.m in Sources */,
+				98004CBA1CB3C1B4001A32EE /* TraditionPickersTableViewCell.m in Sources */,
+				98004CBC1CB3C1B4001A32EE /* TraditionSwitcherTableViewCell.m in Sources */,
+				98004CB91CB3C1B4001A32EE /* TraditionImageTableViewCell.m in Sources */,
 				98BE8CBF1C4C87EB000D7477 /* UIFactory.m in Sources */,
 				98BE8CEE1C4CBB4D000D7477 /* ExampleViewController.m in Sources */,
 				9837676E1C48CF85004B7EB7 /* main.m in Sources */,
