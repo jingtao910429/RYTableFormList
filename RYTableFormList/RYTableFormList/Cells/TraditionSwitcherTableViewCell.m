@@ -24,5 +24,13 @@
 ///ValueChanged_Method
 - (IBAction)switchValueChanged:(id)sender {
     
+    UISwitch *switchItem = (UISwitch *)sender;
+    
+    if (switchItem.on) {
+        
+    }else {
+        
+    }
+    
 }
 @end

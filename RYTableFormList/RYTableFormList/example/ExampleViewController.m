@@ -70,6 +70,8 @@
         
     }
     
+    listFormTableView_C.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     //TraditionPickersTableViewCell *p_cell = listFormTableView_C.traditionPickersTableViewCell;
     
     //ListFormModel *listFormModel = self.dataSource[indexPath.row];
@@ -81,72 +83,82 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RYListFormTableViewCell *selectCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([selectCell isKindOfClass:[TraditionPickersTableViewCell class]]) {
         
-    if (8 == indexPath.row || 9 == indexPath.row || 10 == indexPath.row) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        return;
-    }else {
-        
-        PickerView *pickerView = [[UIFactory shareInstance] pickerView];
-        pickerView.pickerViewDelegte = self;
-        
-        if (0 == indexPath.row) {
+        if (8 == indexPath.row || 9 == indexPath.row || 10 == indexPath.row) {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            return;
+        }else {
             
-            //测试日期控件，类型为 UIDatePickerModeDateAndTime
-            pickerView.popUpPickerViewType  = PickerViewTypeDate;
-            //如果是日期控件，需要设置控件日期类型
-            pickerView.datePickerViewMode   = PickerViewDateModeDateAndTime;
+            PickerView *pickerView = [[UIFactory shareInstance] pickerView];
+            pickerView.pickerViewDelegte = self;
             
-        }else if (1 == indexPath.row){
-            
-            //UIDatePickerModeDate
-            pickerView.popUpPickerViewType  = PickerViewTypeDate;
-            pickerView.datePickerViewMode   = PickerViewDateModeDateOnly;
-            
-        }else if (2 == indexPath.row) {
-            
-            //UIDatePickerModeTime
-            pickerView.popUpPickerViewType  = PickerViewTypeDate;
-            pickerView.datePickerViewMode   = PickerViewDateModeTime;
-            
-        }else if (3 == indexPath.row) {
-            
-            //UIDatePickerModeDate
-            pickerView.popUpPickerViewType  = PickerViewTypeDate;
-            pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
-            
-            
-        }else if (indexPath.row >= 4 && indexPath.row <=7) {
-            
-            switch (indexPath.row) {
-                case 4:
-                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
-                    break;
-                case 5:
-                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
-                    break;
-                case 6:
-                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
-                    break;
-                case 7:
-                    pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
-                    break;
-                default:
-                    break;
+            if (0 == indexPath.row) {
+                
+                //测试日期控件，类型为 UIDatePickerModeDateAndTime
+                pickerView.popUpPickerViewType  = PickerViewTypeDate;
+                //如果是日期控件，需要设置控件日期类型
+                pickerView.datePickerViewMode   = PickerViewDateModeDateAndTime;
+                
+            }else if (1 == indexPath.row){
+                
+                //UIDatePickerModeDate
+                pickerView.popUpPickerViewType  = PickerViewTypeDate;
+                pickerView.datePickerViewMode   = PickerViewDateModeDateOnly;
+                
+            }else if (2 == indexPath.row) {
+                
+                //UIDatePickerModeTime
+                pickerView.popUpPickerViewType  = PickerViewTypeDate;
+                pickerView.datePickerViewMode   = PickerViewDateModeTime;
+                
+            }else if (3 == indexPath.row) {
+                
+                //UIDatePickerModeDate
+                pickerView.popUpPickerViewType  = PickerViewTypeDate;
+                pickerView.datePickerViewMode   = PickerViewDateModeCountDownTimer;
+                
+                
+            }else if (indexPath.row >= 4 && indexPath.row <=7) {
+                
+                switch (indexPath.row) {
+                    case 4:
+                        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"有",@"无"], nil];
+                        break;
+                    case 5:
+                        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"], nil];
+                        break;
+                    case 6:
+                        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                        break;
+                    case 7:
+                        pickerView.dataSource = [NSMutableArray arrayWithObjects:@[@"row1",@"row2"],@[@"row3",@"row4"],@[@"row3",@"row4"],@[@"row3",@"row4"], nil];
+                        break;
+                    default:
+                        break;
+                }
+                
+                
+                pickerView.popUpPickerViewType  = PickerViewTypeNormal;
+                pickerView.normalPickerViewType = pickerView.dataSource.count;
+                
+                
             }
             
+            [self.view addSubview:pickerView];
             
-            pickerView.popUpPickerViewType  = PickerViewTypeNormal;
-            pickerView.normalPickerViewType = pickerView.dataSource.count;
-            
-            
+            [pickerView animationStart];
+            [pickerView reloadData];
         }
         
-        [self.view addSubview:pickerView];
+    }else {
         
-        [pickerView animationStart];
-        [pickerView reloadData];
     }
+    
+    
 }
 
 #pragma mark - PickerViewDelegte

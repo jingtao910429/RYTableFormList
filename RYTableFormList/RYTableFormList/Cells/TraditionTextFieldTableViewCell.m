@@ -28,6 +28,24 @@
 
 #pragma mark UITextFieldDelegate
 
+/**
+ *  TextField常用方法
+ */
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return YES;
+}
 
 @end

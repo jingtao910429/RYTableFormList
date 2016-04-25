@@ -9,10 +9,10 @@
 #import "AppDelegate.h"
 #import "ExampleViewController.h"
 
-/**
- *  /////wenzi
- */
-@interface AppDelegate ()
+
+#define api_domain @"https://192.168.253.33:454/"
+
+@interface AppDelegate () <NSURLConnectionDataDelegate,NSURLSessionDelegate>
 
 @end
 
@@ -29,6 +29,8 @@
     
     ExampleViewController *exampleViewController = [[ExampleViewController alloc] init];
     self.window.rootViewController = exampleViewController;
+    
+    [self provinceAndCityDatas];
     
     return YES;
 }
@@ -53,6 +55,79 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - NSURLSessionDelegate
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler{
+    SecTrustRef serverTrust = challenge.protectionSpace.serverTrust;
+    NSArray *serverCertificates = CertificateTrustChainForServerTrust(serverTrust);
+    //获取服务器证书
+    NSString *base64string = [serverCertificates[0] base64EncodedStringWithOptions:0];
+    NSLog(@"证书---%@",base64string);
+}
+
+
+static NSArray * CertificateTrustChainForServerTrust(SecTrustRef serverTrust) {
+    CFIndex certificateCount = SecTrustGetCertificateCount(serverTrust);
+    NSMutableArray *trustChain = [NSMutableArray arrayWithCapacity:(NSUInteger)certificateCount];
+    for (CFIndex i = 0; i < certificateCount; i++) {
+        SecCertificateRef certificate = SecTrustGetCertificateAtIndex(serverTrust, i);
+        [trustChain addObject:(__bridge_transfer NSData *)SecCertificateCopyData(certificate)];
+    }
+    return [NSArray arrayWithArray:trustChain];
+}
+
+#pragma mark - NSURLConnectionDataDelegate
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+}
+
+#pragma mark - NSURLConnectionDelegate
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+}
+
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    if ([challenge.protectionSpace.authenticationMethod
+         isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        // we only trust our own domain
+        
+        NSArray *hostsArray = [api_domain componentsSeparatedByString:@":"];
+        NSString *hostAllowStr = [hostsArray[1] substringFromIndex:[@"//" length]];
+        
+        if ([challenge.protectionSpace.host isEqualToString:hostAllowStr]) {
+            SecTrustRef trust = challenge.protectionSpace.serverTrust;
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:trust];
+            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+        }
+    }
+    
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+}
+
+#pragma mark - private methods
+
+//请求省市县接口
+- (void)provinceAndCityDatas {
+    
+    NSString *str=[NSString stringWithFormat:@"%@Content2/scripts/ProvinceCityCounty.js",api_domain];
+    NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    //1 request
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    //2 connection sendasync异步请求
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        NSString *ProvinceCityCounty = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"省市县数据结构");
+        
+    }];
+    
 }
 
 @end

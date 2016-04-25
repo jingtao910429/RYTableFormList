@@ -23,5 +23,9 @@
 ///ValueChanged_Method
 - (IBAction)sliderValueChanged:(id)sender {
     
+    UISlider *sliderItem = (UISlider *)sender;
+    
+    NSLog(@"测试数据 %f",sliderItem.value);
+    
 }
 @end

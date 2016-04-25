@@ -12,6 +12,5 @@
 //Image
 @interface TraditionImageTableViewCell : RYTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *imageNameLabel;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageCompent;
 @end
