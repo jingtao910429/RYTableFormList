@@ -89,6 +89,12 @@ static NSArray * CertificateTrustChainForServerTrust(SecTrustRef serverTrust) {
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 }
 
+/**
+ *  需要添加AFNetWorking中对于证书的验证
+ *
+ *  @param connection NSURLConnection
+ *  @param challenge  NSURLAuthenticationChallenge
+ */
 - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
     if ([challenge.protectionSpace.authenticationMethod
@@ -124,7 +130,7 @@ static NSArray * CertificateTrustChainForServerTrust(SecTrustRef serverTrust) {
         
         NSString *ProvinceCityCounty = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
         
-        NSLog(@"省市县数据结构");
+        NSLog(@"省市县数据结构 %@",ProvinceCityCounty);
         
     }];
     
