@@ -14,6 +14,5 @@
 @property (weak, nonatomic) IBOutlet TraditionTextFieldTableViewCell *traditionTextFieldTableViewCell;
 @property (weak, nonatomic) IBOutlet TraditionSliderTableViewCell *traditionSliderTableViewCell;
 @property (weak, nonatomic) IBOutlet TraditionSwitcherTableViewCell *traditionSwitcherTableViewCell;
-
 @property (weak, nonatomic) IBOutlet TraditionImageTableViewCell *traditionImageTableViewCell;
 @end
